@@ -1,0 +1,19 @@
+<div style="background-color:  #9bd1d5 ;" class="container">
+    <div class="row"> 
+            <div class="text">
+                <h1>Real Persona</h1>
+            </div>
+        <form class="form margin-form"  [formGroup]="loginForm" (ngSubmit)="login()" >
+            <h2>Admin Login</h2><br>
+            <div class="form-group">
+                <input type="email" class="form-control"    placeholder=" &#xf0e0; Email ID" formControlName="email"> 
+            </div><br>
+            <div class="form-group">
+                <input   type="password" class="form-control" placeholder="&#xf0e0; Password" formArrayName="password">
+            </div><br>
+            <div class="form-group" class="button">
+                <button [disabled]="loginForm.invalid" type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
+            </div>
+        </form>
+    </div>
+</div>
