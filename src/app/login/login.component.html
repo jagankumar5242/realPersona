@@ -1,18 +1,25 @@
-<div style="background-color:  #9bd1d5 ;" class="container">
+
+<div  class="container">
     <div class="row"> 
             <div class="text">
-                <h1>Real Persona</h1>
+                <h1> <img src="assets\images\Frame.svg" alt=""> Real Persona</h1>
             </div>
-        <form class="form margin-form"  [formGroup]="loginForm" (ngSubmit)="login()" >
+        <form class="form"  [formGroup]="loginForm" (ngSubmit)="login()" >
             <h2>Admin Login</h2><br>
+
             <div class="form-group">
-                <input type="email" class="form-control"    placeholder=" &#xf0e0; Email ID" formControlName="email"> 
+                <img src="assets\images\email.svg" class="mail-icon" crouser> 
+            <input  type="email" class="form-control"  placeholder=" Email ID" formControlName="email" >   
             </div><br>
+
             <div class="form-group">
-                <input   type="password" class="form-control" placeholder="&#xf0e0; Password" formArrayName="password">
+                <img src="assets\images\LockKey.svg" class="LockKey-icon" >
+                <img src="assets\images\Eye.svg" class="password-icon">   
+                <input   type="password" class="form-control" placeholder=" Password" formContorolName="password">    
             </div><br>
+
             <div class="form-group" class="button">
-                <button [disabled]="loginForm.invalid" type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
+                <button  type="submit" class="btn rp-btn">Login</button>
             </div>
         </form>
     </div>
