@@ -1,1 +1,27 @@
  
+<div  class="container">
+    <div class="row"> 
+            <div class="text">
+                <h1> <img src="assets\images\Frame.svg" alt=""> Real Persona</h1>
+            </div>
+        <form class="form"  [formGroup]="loginForm" (ngSubmit)="login()" >
+            <h2>Admin Login</h2><br>
+
+            <div class="form-group">
+                <img src="assets\images\email.svg" class="mail-icon"> 
+            <input  type="email" class="form-control"  placeholder=" Email ID" formControlName="email" >   
+            </div><br>
+
+            <div class="form-group">
+                <img src="assets\images\LockKey.svg" class="LockKey-icon" >
+                <img src="assets\images\Eye.svg" class="password-icon">   
+                <input   type="password" class="form-control" placeholder=" Password" formContorolName="password">    
+            </div><br>
+
+            <div class="form-group" class="button">
+                <button  type="submit" class="btn rp-btn"(click)="login()">Login</button>
+            </div>
+        </form>
+    </div>
+</div>
+
