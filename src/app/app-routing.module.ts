@@ -7,6 +7,8 @@ import { LayoutComponent } from './header/layout/layout.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/auth',pathMatch:'full'},
+  {path:'auth',component:AuthComponent},
+  {path:'dashbord',component:DashboardComponent},
   {
     path:'dashboard',
     component: LayoutComponent,

@@ -1,27 +1,39 @@
  
-<div  class="container">
-    <div class="row"> 
+<div  class="login-container d-flex justify-content-center align-items-center">
+    <div class="w-100">
+        <div class="row">
             <div class="text">
-                <h1> <img src="assets\images\Frame.svg" alt=""> Real Persona</h1>
+                <h1> <img src="assets\images\Frame.svg"> Real Persona</h1>
             </div>
-        <form class="form"  [formGroup]="loginForm" (ngSubmit)="login()" >
-            <h2>Admin Login</h2><br>
-
-            <div class="form-group">
-                <img src="assets\images\email.svg" class="mail-icon"> 
-            <input  type="email" class="form-control"  placeholder=" Email ID" formControlName="email" >   
-            </div><br>
-
-            <div class="form-group">
-                <img src="assets\images\LockKey.svg" class="LockKey-icon" >
-                <img src="assets\images\Eye.svg" class="password-icon">   
-                <input   type="password" class="form-control" placeholder=" Password" formContorolName="password">    
-            </div><br>
-
-            <div class="form-group" class="button">
-                <button  type="submit" class="btn rp-btn"(click)="login()">Login</button>
+        </div>
+        
+        <div class="row d-flex justify-content-center">
+            <div class="col-sm-12 col-md-6">
+                <form class="form col-6"  [formGroup]="loginForm" (ngSubmit)="login()" >
+                    <h2>Admin Login</h2><br>
+        
+                    <div class="form-group position-relative">
+                        <img src="assets\images\email.svg" class="input-left-icon"> 
+                    <input  type="email" class="form-control icon-input"  placeholder=" Email ID" formControlName="email" >   
+                    </div><br>
+        
+                    <div class="form-group position-relative">
+                        <img src="assets\images\LockKey.svg" class="input-left-icon" >
+                        <img src="assets\images\Eye.svg" class="input-right-icon">   
+                        <input   type="password" class="form-control icon-input" placeholder=" Password" formContorolName="password">    
+                    </div><br>
+        
+                    <div class="form-group row d-flex justify-content-center button">
+                        <div class="col-8">
+                            <button  type="submit" class="btn rp-btn w-100"  routerLink="dashbord">Login</button>
+                        </div>
+                        
+                    </div>
+                </form>
             </div>
-        </form>
+           
+        </div>
     </div>
+    
 </div>
 

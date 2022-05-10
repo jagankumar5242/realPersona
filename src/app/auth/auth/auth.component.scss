@@ -1,67 +1,41 @@
 
  form {
     text-align: center;
-    margin: auto;
+    width: auto;
     background: #FFFFFF;
     box-shadow: 0px 8px 24px rgba(219, 237, 233, 0.8);
-    border-radius: 12px;
-    width: 600px;
-    height: 55opx;
-    left: 380px;
-    top: 100px;
-    bottom: 200px; 
-    padding-bottom: 40px;
-    padding-top: 50px;
-    padding-left: 50px;
-    padding-right: 50px;    
+    border-radius: 12px; 
+    padding: 2rem;
  }
 .text {
-    position: static;
-    left: calc(50% - 480px/2);
-    top: 120px;
     font-family: 'Public Sans';
     font-style: normal;
     font-weight: 700;
-    font-size: 32px;
+    font-size: 2rem;
     line-height: 38px;
     text-align: center;
     color: #242727;
-    padding-top: 30px;
-    padding-bottom: 5px;
 }
- .form-control{
-     
-     padding-left: 30px;
+
+ .login-container{
+     background-color:  #d5ebef;
+     height: 100vh;
+     overflow: auto;  
+     overflow-x: hidden;  
  }
- .mail-icon{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
+ .input-left-icon{
+   position: absolute;
+    left: 3px;
     padding-top: 4px;
  }
- .LockKey-icon{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    padding-top: 4px;
- }
- .password-icon{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    padding-top:6px;
-    padding-left: 470px;
+ .input-right-icon{
+   position: absolute;
+    right: 1rem;
+    padding-top: 5px;
     cursor: pointer;
+   
  }
- .container{
-     background-color:  #cadfe3;
-     
-    
-      
+
+ .icon-input{
+    padding-left: 2.5rem;
  }
