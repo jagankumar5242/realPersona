@@ -11,8 +11,8 @@ import { AuthService } from './auth.service';
 })
 export class AuthComponent implements OnInit {
   loginForm=new FormGroup({
-  email:new FormControl(''),
-  password:new FormControl(''),
+  email:new FormControl('',Validators.required),
+  password:new FormControl('',Validators.required),
   });
   constructor(private routerref:Router,private authService:AuthService,public formbuilder:FormBuilder ) { }
 
