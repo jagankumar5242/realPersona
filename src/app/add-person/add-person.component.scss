@@ -1,0 +1,42 @@
+.add-container{
+    background-color:  #d5ebef;
+    height: 100vh;
+    overflow: auto;  
+    overflow-x: hidden;  
+}
+form {
+    text-align: center;
+    width: auto;
+    background: #FFFFFF;
+    box-shadow: 0px 8px 24px rgba(219, 237, 233, 0.8);
+    border-radius: 12px; 
+    padding:3rem;
+    padding-left: 1rem;
+     
+     
+}
+.head{
+    position: static;
+    font-family: 'Public Sans';
+    font-style: normal;
+    font-size: 14px;
+    text-transform: capitalize;
+    flex: auto;
+    padding-top: 4rem;
+    padding-left: 2rem;    
+}
+.text{
+    text-align:justify;
+}
+.button{
+    text-align: end;
+     
+}
+ .cnl{
+      
+     padding-right: 4rem;  
+ }
+ .form-group{
+     padding: 5px;
+ }
+ 
