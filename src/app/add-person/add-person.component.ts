@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-person',
@@ -6,12 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-person.component.scss']
 })
 export class AddPersonComponent implements OnInit {
-
-  constructor() { }
+  PublishForm=new FormGroup({
+   
+  })
+  constructor(private routerref:Router ) { }
 
   ngOnInit(): void {
   }
   addData(){
-    
+
   }
+    
+    back(): void {
+      this.routerref.navigate(['/dashbord']);
+   }
 }

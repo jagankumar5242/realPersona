@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+
+import { assertPlatform, Component, OnInit } from '@angular/core';
 import { FormGroup,FormControl, Validators, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
-import { NotFoundError } from 'rxjs';
 import { AuthService } from './auth.service';
  
 @Component({
@@ -10,40 +10,44 @@ import { AuthService } from './auth.service';
   styleUrls: ['./auth.component.scss']
 })
 export class AuthComponent implements OnInit {
-  loginForm=new FormGroup({
-  email:new FormControl('',Validators.required),
-  password:new FormControl('',Validators.required),
-  });
-  constructor(private routerref:Router,private authService:AuthService,public formbuilder:FormBuilder ) { }
+ 
+  showPassword=false;
+  passwordToggleIcon ='eye';
+  // loginForm=new FormGroup({
+  // email:new FormControl('',Validators.required),
+  // password:new FormControl('',Validators.required),
+  // }); 
+  loginForm: FormGroup;
+  message=true
+   msg:any;
+    
+
+  constructor(private routerref:Router, public formbuilder:FormBuilder, public auth: AuthService) {
+
+    this.loginForm=this.formbuilder.group({
+      email:['', Validators.compose([Validators.required, Validators.email])],
+      password:['', Validators.compose([Validators.required])]
+    })
+   }
 
   ngOnInit(): void {
-    this.loginForm=this.formbuilder.group({
-      email:[''],
-      password:['',Validators.required]
+    this.loginForm.valueChanges.subscribe((v)=>{
+      this.message=this.loginForm.valid;
     })
-  }
-    login(){
-     this. authService.login()
-     .subscribe(res=>{
-        const user=res.find((a:any)=>{
-          return a.email===this.loginForm.value.email && a.password===this.loginForm.value.password
-        });
-        if(user){
-          
-        }
-      },err=>{
-        this.loginForm
+  }  
+    login(data: any){
+      
+      this.auth.login(data).subscribe(res =>{
+        // console.log(res);
         this.routerref.navigate(["dashbord"])
-      })
-       
-      // const loginCredentials = 
-      //  this.authService.login().subscribe((res:any )=>{
         
-      //  })
-      // // console.log(this.loginForm.value);
-      // localStorage.setItem('email',this.email);
-      // if(this.password=="123"){
-      //   this.routerref.navigate(['/dashbord'])
-      // }
+      }, err =>{
+          this.msg='user not found';
+      })
       }
-    }
+      
+      tagglePassword():void{
+        this.showPassword= !this.showPassword;
+
+      }
+}

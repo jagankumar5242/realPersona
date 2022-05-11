@@ -6,11 +6,11 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  private url:string="http://199.34.21.254/persona/login"
+  private url:string=" http://199.34.21.254/persona/login"
   constructor(private http: HttpClient ) { }
 
-  login():Observable<any[]>{
-    return this.http.get<any[]>(this.url);
+  login(payLoad: any):Observable<any[]>{
+    return this.http.post<any[]>(this.url, payLoad);
   }
 }
   

@@ -17,6 +17,7 @@ import { AddPersonComponent } from './add-person/add-person.component';
     AuthComponent,
     AddPersonComponent
   ],
+ 
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -27,6 +28,7 @@ import { AddPersonComponent } from './add-person/add-person.component';
   ],
   providers: [
     AuthService
+     
   ],
   bootstrap: [AppComponent]
 })
