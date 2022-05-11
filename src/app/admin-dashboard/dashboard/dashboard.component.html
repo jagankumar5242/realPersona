@@ -1,4 +1,4 @@
-<div class="body"> 
+<div class="body">
   <div class="row">
     <div class="col-12">
       <label class="lab1">Persona Management</label>
@@ -6,136 +6,182 @@
     <div class="row">
       <div class="col-sm-12 col-md-8">
         <p class="p1">450</p>
-          <p class="p2">Personas</p>
-          <input type="search" placeholder="Search by Name,Location,Occupation" class="s1">
+        <p class="p2">Personas</p>
+          <!-- <img src="assets\images\MagnifyingGlass.svg" id="magnifying"> -->
+          <input type="search" placeholder="Search by Name,Location,Occupation" class="s1"/>
       </div>
-      <div class="col-sm-12 col-md-4 d-flex justify-content-end align-items-center">
-        <a class="del" href="#"><img src="assets\images\Trash.svg">Delete</a>
+      <div
+        class="col-sm-12 col-md-4 d-flex justify-content-end align-items-center"
+      >
+        <a class="del" href="#"><img src="assets\images\Trash.svg" />Delete</a>
         <button class="btn btn-primary">+ New Persona</button>
       </div>
     </div>
   </div>
   <div class="container">
-        <table class="table table-hover">
-          <thead>
-            <tr>
-              <th>
-                <span class="custom-checkbox">
-                  <input type="checkbox" id="selectAll">
-                  <label for="selectAll"></label>
-                </span>
-              </th>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Gender</th>
-              <th>Age</th>
-              <th>Location</th>
-              <th>Occupation</th>
-              <th>Uploaded by</th>
-              <th>Uploaded on</th>
-              <th>No.of downloads</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let item of users">
-              <td>
-                <span class="checkbox">
-                                    <input type="checkbox" id="checkbox1" name="options[]" value="1">
-                                    <label for="checkbox1"></label>
-                 </span>
-              </td>
-              <td>{{item.firstname}}</td>
-              <td>{{item.lastname}}</td>
-              <td>{{item.gender}}</td>
-              <td>{{item.age}}</td>
-              <td>{{item.Location}}</td>
-              <td>{{item.Occupation}}</td>
-              <td>{{item.upBy}}</td>
-              <td>{{item.upOn}}</td>
-              <td></td>
-              <td>
-                <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><img src="assets\images\Trash.svg" alt=""></a>
-                <a href="#editEmployeeModal" class="edit" data-toggle="modal"><img src="assets\images\edit.svg" alt=""></a>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <span class="custom-checkbox">
-                                    <input type="checkbox" id="checkbox2" name="options[]" value="1">
-                                    <label for="checkbox2"></label>
-                                </span>
-              </td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>
-                <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><img src="assets\images\Trash.svg" alt=""></a>
-                <a href="#editEmployeeModal" class="edit" data-toggle="modal"><img src="assets\images\edit.svg" alt=""></a>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <span class="custom-checkbox">
-                                    <input type="checkbox" id="checkbox3" name="options[]" value="1">
-                                    <label for="checkbox3"></label>
-                                </span>
-              </td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>
-                <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><img src="assets\images\Trash.svg" alt=""></a>
-                <a href="#editEmployeeModal" class="edit" data-toggle="modal"><img src="assets\images\edit.svg" alt=""></a>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <span class="custom-checkbox">
-                                    <input type="checkbox" id="checkbox4" name="options[]" value="1">
-                                    <label for="checkbox4"></label>
-                                </span>
-              </td>
-             <td></td>
-             <td></td>
-             <td></td>
-             <td></td>
-             <td></td>
-             <td></td>
-             <td></td>
-             <td></td>
-             <td></td>
-              <td>
-                <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><img src="assets\images\Trash.svg" alt=""></a>
-                <a href="#editEmployeeModal" class="edit" data-toggle="modal"><img src="assets\images\edit.svg" alt=""></a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <div class="clearfix">
-          <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
-          <ul class="pagination">
-            <li class="page-item disabled"><a href="#">Previous</a></li>
-            <li class="page-item"><a href="#" class="page-link">1</a></li>
-            <li class="page-item"><a href="#" class="page-link">2</a></li>
-            <li class="page-item active"><a href="#" class="page-link">3</a></li>
-            <li class="page-item"><a href="#" class="page-link">4</a></li>
-            <li class="page-item"><a href="#" class="page-link">5</a></li>
-            <li class="page-item"><a href="#" class="page-link">Next</a></li>
-          </ul>
-        </div>
-      </div>
-
+    <table class="table table-hover" onload="getUsers()">
+      <thead>
+        <tr>
+          <th>
+            <span class="custom-checkbox">
+              <input type="checkbox" id="selectAll" />
+              <label for="selectAll"></label>
+            </span>
+          </th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Gender</th>
+          <th>Age</th>
+          <th>Location</th>
+          <th>Occupation</th>
+          <th>Uploaded by</th>
+          <th>Uploaded on</th>
+          <th>No.of downloads</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of users">
+          <td>
+            <span class="checkbox">
+              <input
+                type="checkbox"
+                id="checkbox1"
+                name="options[]"
+                value="1"
+              />
+              <label for="checkbox1"></label>
+            </span>
+          </td>
+          <td>{{item.employee_name}}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <!-- <td>{{ item.firstname }}</td>
+          <td>{{ item.lastname }}</td>
+          <td>{{ item.gender }}</td>
+          <td>{{ item.age }}</td>
+          <td>{{ item.Location }}</td>
+          <td>{{ item.Occupation }}</td>
+          <td>{{ item.upBy }}</td>
+          <td>{{ item.upOn }}</td> -->
+          <td></td>
+          <td>
+            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal">
+              <img src="assets\images\Trash.svg" alt="" />
+            </a>
+            <a href="#editEmployeeModal" class="edit" data-toggle="modal">
+              <img src="assets\images\edit.svg" alt="" />
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="custom-checkbox">
+              <input
+                type="checkbox"
+                id="checkbox2"
+                name="options[]"
+                value="1"
+              />
+              <label for="checkbox2"></label>
+            </span>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal">
+              <img src="assets\images\Trash.svg" alt="" />
+            </a>
+            <a href="#editEmployeeModal" class="edit" data-toggle="modal">
+              <img src="assets\images\edit.svg" alt="" />
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="custom-checkbox">
+              <input
+                type="checkbox"
+                id="checkbox3"
+                name="options[]"
+                value="1"
+              />
+              <label for="checkbox3"></label>
+            </span>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal">
+              <img src="assets\images\Trash.svg" alt="" />
+            </a>
+            <a href="#editEmployeeModal" class="edit" data-toggle="modal">
+              <img src="assets\images\edit.svg" alt="" />
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span class="custom-checkbox">
+              <input
+                type="checkbox"
+                id="checkbox4"
+                name="options[]"
+                value="1"
+              />
+              <label for="checkbox4"></label>
+            </span>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal">
+              <img src="assets\images\Trash.svg" alt="" />
+            </a>
+            <a href="#editEmployeeModal" class="edit" data-toggle="modal">
+              <img src="assets\images\edit.svg" alt="" />
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- <div class="clearfix">
+       <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div> 
+       <ul class="pagination">
+        <li class="page-item disabled"><a href="#">Previous</a></li>
+        <li class="page-item"><a href="#" class="page-link">1</a></li>
+        <li class="page-item"><a href="#" class="page-link">2</a></li>
+        <li class="page-item active"><a href="#" class="page-link">3</a></li>
+        <li class="page-item"><a href="#" class="page-link">4</a></li>
+        <li class="page-item"><a href="#" class="page-link">5</a></li>
+        <li class="page-item"><a href="#" class="page-link">Next</a></li>
+       </ul>
+      </div> -->
+  </div>
 </div>

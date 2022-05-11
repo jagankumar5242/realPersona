@@ -6,3 +6,7 @@ export interface userDetails {
     update_time : Date;
     create_time : Date;
 }
+
+// export interface userDetails {
+// id : number,employee_name : string,employee_salary:number
+// }

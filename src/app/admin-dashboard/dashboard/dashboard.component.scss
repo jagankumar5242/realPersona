@@ -1,73 +1,71 @@
-.body{
+.body {
     background: #d5ebef;
-    padding-left: 80px;
-    padding-right: 80px;
-    padding-top: 48px;
-    padding-bottom: 48px;
+  padding-left: 80px;
+  padding-right: 80px;
+  padding-top: 48px;
+  padding-bottom: 48px;
 }
-.lab1{
+.lab1 {
+  font-family: "Public Sans";
+  font-weight: 700;
+  font-size: 24px;
+  margin-left: 2%;
 
-font-family: 'Public Sans';
-font-weight: 700;
-font-size: 24px;
-margin-left: 2%;
-
-color: #242727;
+  color: #242727;
 }
-.p1{
+.p1 {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  margin-left: 4%;
 
-font-family: 'Public Sans';
-font-style: normal;
-font-weight: 700;
-font-size: 24px;
-margin-left: 4%;
-
-color: #242727;
+  color: #242727;
 }
-.p2{
-    font-family: 'Public Sans';
-    
-    font-size: 14px;
-    font-weight: 700;
-    margin-left: 4%;
-    margin-top: -3%;  
+.p2 {
+  font-family: "Public Sans";
+  font-size: 14px;
+  font-weight: 700;
+  margin-left: 4%;
+  margin-top: -3%;
 }
-.s1{
-position: absolute;
-display: flex;
-flex-direction: row;
-padding: 5px;
-margin-left: 10%;
-margin-top: -60px;
+.s1 {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+  margin-left: 10%;
+  margin-top: -60px;
+text-align: center;
+  width: 350px;
+  height: 40px;
 
-width: 350px;
-height: 40px;
-
-background-color: #FFFFFF;
-border: 1.6px solid #DDDDDD;
-border-radius: 12px;
-font-size: 75%;
+  background-color: #ffffff;
+  border: 1.6px solid #dddddd;
+  border-radius: 12px;
+  font-size: 75%;
 }
-.del{
-    text-decoration: none;
-    color: #242727;
+.del {
+  text-decoration: none;
+  color: #242727;
 }
 .table {
-   // border: solid black;
-    row-gap: 5px;
-    border-radius: 12px;
-    border-spacing: 10px;
-    width: 100%;
-    background-color:#FFFFFF;
-    border-spacing:0 15px;
-    padding: 2px;
+  // border: solid black;
+  overflow-x:auto;
+  row-gap: 5px;
+  border-radius: 12px;
+  border-spacing: 10px;
+  width: 100%;
+  background-color: #ffffff;
+  border-spacing: 0 15px;
+  padding: 2px;
 }
-th{
-    height: 70px;
-    border-bottom:  solid #E5E5E5;
+th {
+  height: 70px;
+  border-bottom: solid #e5e5e5;
 }
-td{
-    height: 70px;
-    border-bottom: 1px solid #E5E5E5;
-    text-align: center;
+td {
+  height: 70px;
+  border-bottom: 1px solid #e5e5e5;
+  
 }

@@ -1,16 +1,17 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
+import { HttpClient, HttpEvent, HttpHandler, HttpHeaders, HttpRequest } from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { userDetails } from './user';
 @Injectable({
   providedIn: 'root'
 })
 export class UsersService {
-  
-  // constructor(private http : HttpClient) { }
+  constructor(private http : HttpClient) { }
 
-  // getUsers(): Observable<userDetails[]>
-  // {
-  //   return this.http.get<userDetails[]>('http://199.34.21.254/persona/users');
-  // }
+  getUsers(): Observable<any>
+  {
+    const URL = 'persona/users'
+    return this.http.get<any>(URL);
+    
+  }  
 }

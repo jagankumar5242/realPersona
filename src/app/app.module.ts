@@ -5,6 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ManagementComponent } from './management/management.component';
 import { HeaderModule} from './header/header.module';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { backendInterceptor } from './interceptors/backened.interceptor';
+import { UsersService } from './admin-dashboard/dashboard/users.service';
  
 
 @NgModule({
@@ -16,8 +19,16 @@ import { HeaderModule} from './header/header.module';
     BrowserModule,
     AppRoutingModule,
     HeaderModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    UsersService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: backendInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
