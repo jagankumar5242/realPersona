@@ -8,7 +8,7 @@ import { UsersService } from './users.service'
 })
 export class DashboardComponent implements OnInit {
   userList:any;
-  public users: any=[]
+  public users: any=[];
   // [{
   //   firstname : 'charan',
   //   lastname : 'Reddy',

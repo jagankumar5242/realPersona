@@ -1,4 +1,4 @@
-<div class="body">
+<div class="body" onload="getUsers()">
   <div class="row">
     <div class="col-12">
       <label class="lab1">Persona Management</label>
@@ -10,16 +10,14 @@
           <!-- <img src="assets\images\MagnifyingGlass.svg" id="magnifying"> -->
           <input type="search" placeholder="Search by Name,Location,Occupation" class="s1"/>
       </div>
-      <div
-        class="col-sm-12 col-md-4 d-flex justify-content-end align-items-center"
-      >
+      <div class="col-sm-12 col-md-4 d-flex justify-content-end align-items-center" >
         <a class="del" href="#"><img src="assets\images\Trash.svg" />Delete</a>
         <button class="btn btn-primary">+ New Persona</button>
       </div>
     </div>
   </div>
   <div class="container">
-    <table class="table table-hover" onload="getUsers()">
+    <table class="table table-hover" >
       <thead>
         <tr>
           <th>
@@ -53,22 +51,14 @@
               <label for="checkbox1"></label>
             </span>
           </td>
-          <td>{{item.employee_name}}</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <!-- <td>{{ item.firstname }}</td>
+          <td>{{ item.firstname }}</td>
           <td>{{ item.lastname }}</td>
           <td>{{ item.gender }}</td>
           <td>{{ item.age }}</td>
           <td>{{ item.Location }}</td>
           <td>{{ item.Occupation }}</td>
           <td>{{ item.upBy }}</td>
-          <td>{{ item.upOn }}</td> -->
+          <td>{{ item.upOn }}</td>
           <td></td>
           <td>
             <a href="#deleteEmployeeModal" class="delete" data-toggle="modal">
