@@ -1,8 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddPersonComponent } from './add-person/add-person.component';
+import { DashboardComponent } from './admin-dashboard/dashboard/dashboard.component';
+import { AuthComponent } from './auth/auth/auth.component';
 import { LayoutComponent } from './header/layout/layout.component';
+ 
 
 const routes: Routes = [
+  {path:'auth',component:AuthComponent},
+  {path:'Add-person',component:AddPersonComponent},
   {
     path:'dashboard',
     component: LayoutComponent,
@@ -11,14 +17,18 @@ const routes: Routes = [
         (m) => m.AdminDashboardModule
       )
   },
+  // {
+  //   path: '**',
+  //   redirectTo: 'dashboard'
+  // }
   {
     path: '',
-    redirectTo: 'dashboard',
+    redirectTo: 'auth',
     pathMatch: 'full'
   },
   {
     path: '**',
-    redirectTo: 'dashboard',
+    redirectTo: 'auth',
     pathMatch: 'full'
   },
 ];
@@ -29,3 +39,4 @@ const routes: Routes = [
 })
 
 export class AppRoutingModule { }
+export const routingcomponent=[AuthComponent,DashboardComponent,AddPersonComponent]
