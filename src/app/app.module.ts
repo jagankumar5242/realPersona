@@ -1,13 +1,17 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ManagementComponent } from './management/management.component';
 import { HeaderModule} from './header/header.module';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { backendInterceptor } from './interceptors/backened.interceptor';
+import { UsersService } from './admin-dashboard/dashboard/users.service';
+ 
+
 import { AuthComponent } from './auth/auth/auth.component';
-import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './auth/auth/auth.service';
 import { AddPersonComponent } from './add-person/add-person.component';
 @NgModule({
@@ -17,19 +21,23 @@ import { AddPersonComponent } from './add-person/add-person.component';
     AuthComponent,
     AddPersonComponent
   ],
- 
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule,
-    FormsModule,
+    HeaderModule,
     HttpClientModule,
-    HeaderModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [
-    AuthService
-     
+    UsersService,
+    AuthService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: backendInterceptor,
+      multi: true
+    },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent]    
 })
 export class AppModule { }
