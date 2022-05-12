@@ -13,13 +13,15 @@ export class backendInterceptor implements HttpInterceptor {
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>>{
         console.log('----------',req);
         
-        const url = "http://199.34.21.254/";
+        const url = "http://199.34.21.254";
         const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2NTIyNjU2NzYsImlkIjoiMjAiLCJ1c2VybmFtZSI6InNhdHlhZ3ZucyJ9.ZkSuf6EjRqSqd3sjqzAszIcEsPcWV4RWCMJWmNQ3TfU"
-        const headerSet = new HttpHeaders();
-        headerSet.append('Authorization', token);
+        let headers = new HttpHeaders();
+        headers = headers.set('Authorization', token);
+        headers = headers.set('Access-Control-Allow-Origin', '*');
+        headers = headers.set('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
         req = req.clone({
             url: url + '/' + req.url,
-            headers: headerSet
+            headers: headers
         })
         console.log(req);
         
@@ -32,7 +34,7 @@ export class backendInterceptor implements HttpInterceptor {
                     if(error instanceof HttpErrorResponse){
                         // Handle error message here 
                     if(error.status===401){
-                        this.router.navigate(['/login'])
+                        // this.router.navigate(['/login'])
                     }
                 }
             }
