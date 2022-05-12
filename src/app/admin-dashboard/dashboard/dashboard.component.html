@@ -7,12 +7,14 @@
       <div class="col-sm-12 col-md-8">
         <p class="p1">450</p>
         <p class="p2">Personas</p>
-          <!-- <img src="assets\images\MagnifyingGlass.svg" id="magnifying"> -->
+        <div class="search-bar">
+          <img src="assets\images\MagnifyingGlass.svg" class="input-left-icon">
           <input type="search" placeholder="Search by Name,Location,Occupation" class="s1"/>
+        </div>
       </div>
-      <div class="col-sm-12 col-md-4 d-flex justify-content-end align-items-center" >
+      <div class="col-sm-12 col-md-4 d-flex justify-content-end align-items-center " >
         <a class="del" href="#"><img src="assets\images\Trash.svg" />Delete</a>
-        <button class="btn btn-primary">+ New Persona</button>
+        <button class="rp-btn" routerLink="/Add-person" onclick="reRoute()">+ New Persona</button>
       </div>
     </div>
   </div>
@@ -69,109 +71,9 @@
             </a>
           </td>
         </tr>
-        <tr>
-          <td>
-            <span class="custom-checkbox">
-              <input
-                type="checkbox"
-                id="checkbox2"
-                name="options[]"
-                value="1"
-              />
-              <label for="checkbox2"></label>
-            </span>
-          </td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>
-            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal">
-              <img src="assets\images\Trash.svg" alt="" />
-            </a>
-            <a href="#editEmployeeModal" class="edit" data-toggle="modal">
-              <img src="assets\images\edit.svg" alt="" />
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <span class="custom-checkbox">
-              <input
-                type="checkbox"
-                id="checkbox3"
-                name="options[]"
-                value="1"
-              />
-              <label for="checkbox3"></label>
-            </span>
-          </td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>
-            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal">
-              <img src="assets\images\Trash.svg" alt="" />
-            </a>
-            <a href="#editEmployeeModal" class="edit" data-toggle="modal">
-              <img src="assets\images\edit.svg" alt="" />
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <span class="custom-checkbox">
-              <input
-                type="checkbox"
-                id="checkbox4"
-                name="options[]"
-                value="1"
-              />
-              <label for="checkbox4"></label>
-            </span>
-          </td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>
-            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal">
-              <img src="assets\images\Trash.svg" alt="" />
-            </a>
-            <a href="#editEmployeeModal" class="edit" data-toggle="modal">
-              <img src="assets\images\edit.svg" alt="" />
-            </a>
-          </td>
-        </tr>
+        
       </tbody>
     </table>
-    <!-- <div class="clearfix">
-       <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div> 
-       <ul class="pagination">
-        <li class="page-item disabled"><a href="#">Previous</a></li>
-        <li class="page-item"><a href="#" class="page-link">1</a></li>
-        <li class="page-item"><a href="#" class="page-link">2</a></li>
-        <li class="page-item active"><a href="#" class="page-link">3</a></li>
-        <li class="page-item"><a href="#" class="page-link">4</a></li>
-        <li class="page-item"><a href="#" class="page-link">5</a></li>
-        <li class="page-item"><a href="#" class="page-link">Next</a></li>
-       </ul>
-      </div> -->
+    <!-- <p-paginator [rows]="5" [totalRecords]="50"></p-paginator>    -->
   </div>
 </div>

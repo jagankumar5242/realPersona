@@ -32,14 +32,16 @@
   display: flex;
   flex-direction: row;
   padding: 5px;
-  margin-left: 10%;
-  margin-top: -60px;
+  margin-left: 11%;
+  margin-top: 5px;
 
-  width: 325px;
+  width: 300px;
   height: 40px;
-  
-  background-color: #ffffff;
-  border: 1.6px solid #dddddd;
+  background-color:white;
+  border: none;
+  outline-style: none;
+  //background-color: #ffffff;
+  border: none;
   border-radius: 12px;
   font-size: 75%;
 }
@@ -48,6 +50,44 @@
   color: #242727;
   padding-right: 20px;
   font-weight: 500;
+  
+}
+.search-bar{
+  display: flex;
+  background-color:white;
+  border: none;
+  outline-style:5px solid #d5ebef;
+  top: 25px;
+  left: 19px;
+  size: 25px;
+  width: 350px;
+  position: absolute;
+  height: 48px;
+  margin-top: 140px;
+  margin-left: 155px;
+  border-radius: 12px;
+
+
+}
+.rp-btn{
+  border-color:#d5ebef;
+  color:white;
+  font-family: 'Public Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  border-radius: 12px;
+  padding: 10px;
+  width: 148px;
+  height: 48px;
+  right: 0px;
+  top: 0px;
+}
+.input-left-icon{
+  position: absolute;
+  left: 14px;
+  top: 14px;
+  display: flex
 }
 .table {
   row-gap: 5px;
@@ -59,11 +99,14 @@
   padding: 2px;
 }
 th {
+  text-align: center;
   height: 70px;
   border-bottom: solid #e5e5e5;
   padding-bottom: 16px;
 }
 td {
+  text-align: center;
   height: 70px;
-  border-bottom: 1px solid #e5e5e5; 
+  border-bottom: 1px solid #e5e5e5;
+  font-size: 14px; 
 }

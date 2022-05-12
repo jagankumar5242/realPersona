@@ -17,13 +17,13 @@ const routes: Routes = [
         (m) => m.AdminDashboardModule
       )
   },
-  // {
-  //   path: '**',
-  //   redirectTo: 'dashboard'
-  // }
+  {
+    path: '**',
+    redirectTo: 'dashboard'
+  },
   {
     path: '',
-    redirectTo: 'auth',
+    redirectTo: 'dashboard',
     pathMatch: 'full'
   },
   {

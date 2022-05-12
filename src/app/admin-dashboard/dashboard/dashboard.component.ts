@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UsersService } from './users.service'
+import { UsersService } from './users.service';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -7,22 +8,41 @@ import { UsersService } from './users.service'
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  userList:any;
+  router: any;
   public users: any=[];
-  // [{
-  //   firstname : 'charan',
-  //   lastname : 'Reddy',
-  //   gender : 'male', age : 23, Location : 'Bengalure', Occupation : 'IT',
-  //   upBy : 'king', upOn : '28/4/1999' 
-    
-  // }];
+  
   
   constructor(private usersService:UsersService) {
    }
 
   ngOnInit() {
+    this.users = [{
+      firstname : 'charan',
+      lastname : 'Reddy',
+      gender : 'male', age : 23, Location : 'Bengalure', Occupation : 'IT',
+      upBy : 'king', upOn : '28/4/1999' 
+      
+    },
+    {
+      firstname : 'charan',
+      lastname : 'Reddy',
+      gender : 'male', age : 23, Location : 'Bengalure', Occupation : 'IT',
+      upBy : 'king', upOn : '28/4/1999' 
+      
+    },
+    {
+      firstname : 'charan',
+      lastname : 'Reddy',
+      gender : 'male', age : 23, Location : 'Bengalure', Occupation : 'IT',
+      upBy : 'king', upOn : '28/4/1999' 
+      
+    }];
     this.usersService.getUsers().subscribe((res:any)=> {
     this.users = res.data;
      });
+     this.users.ripple = true;
+  }
+  reRoute(){
+    this.router.navigate(['/Add-person'])
   }
 }
