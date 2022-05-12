@@ -10,6 +10,7 @@ import { AuthComponent } from './auth/auth/auth.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './auth/auth/auth.service';
 import { AddPersonComponent } from './add-person/add-person.component';
+import { AddPersonService } from './add-person/add-person.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,8 +28,8 @@ import { AddPersonComponent } from './add-person/add-person.component';
     HeaderModule
   ],
   providers: [
-    AuthService
-     
+    AuthService,
+    AddPersonService
   ],
   bootstrap: [AppComponent]
 })

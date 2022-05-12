@@ -1,54 +1,74 @@
  <div  class="add-container">
     <div class="w-100">
        <div class=" head col-sm-12 col-md-6 ">
-            <h1> <img src=assets\images\ArrowLeft.svg  (click)="back()"> Persona Management</h1>
+            <h5> <img src=assets\images\ArrowLeft.svg  (click)="back()"> Persona Management</h5>
        </div>
        <div  class="row d-flex justify-content-center">
-        <div class="form-group col-8 ">
-            <form class="form " [formGroup]="PublishForm" (ngSubmit)="addData()">
-                <h3 class="text">Add New Persona</h3>
-               <div class="col-sm-6">
-                    <div class="form-group ">
-                        <input type="text" placeholder="First Name" class="form-control">
-                    </div>
-                    <div class="form-group ">
-                        <input type="text" placeholder="Last Name" class="form-control">
-                    </div>
+        <div class="form-group  col-8">
+            <form class="form " [formGroup]="PublishForm" (ngSubmit)="addData(PublishForm.value)">
+                <h3 class="text">Add New Persona</h3><br>
+               <div class="row col-12">
+                    <div class=" row col-8">
+                        <div class="form-group col-12">
+                            <input type="text" placeholder="First Name" class="form-control" formControlName="firstname" required>
+                        </div>
+
+                        <div class="form-group col-12 ">
+                            <input type="text" placeholder="Last Name" class="form-control" formControlName="lastname" required>
+                        </div>
                     
-                    <div class="form-group col-6">
-                        <label for="gender" id="gender">Gender</label><br>
-                        <input type="radio" value="male" name="gender">male
-                        <input type="radio" value="female" name="gender">female    
-                    </div>
-                    <div class="form-group col-4">
-                        <input type="numbers" placeholder="Age"class="form-control">
-                    </div>
-                    <div class="form-group "> 
-                        <select class="form-control" id="locationFormControlSelect1">
-                        <option>Location</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
+                        <div class="form-group gender col-12">
+                        <label for="gender" id="gender" formControlName="gender">Gender</label><br>
+                            <input type="radio" value="male" name="gender"> male  
+                            <input type="radio" value="female" name="gender"> female    
+                        </div>
+
+                        <div class="form-group col-6">
+                            <input type="numbers" placeholder="Age"class="form-control" formControlName="age" >
+                        </div>
+
+                        <div class="form-group  col-12"> 
+                            <select class="form-control"  formControlName="location" placeholder="select location" id="state" required>
+                                <option value="" disabled selected>location</option>
+                                <option value="Karnataka">Karnataka</option>
+                                <option value="Andhra Pradhesh">Andhra Pradhesh</option>
+                                <option value="Thamilnadu">Thamilnadu</option>
+                                <option value="Kerala">Kerala</option>
+                            </select>
+                        </div>
+                        <!-- <div class="form-group  col-12"> 
+                        <select name="location" id="state"   formControlName="location">
+                            <option value="karnataka">karanataka</option>
+                            <option value="karnataka">karanataka</option>
+                            <option value="karnataka">karanataka</option>
                         </select>
+                    </div> -->
+                        <div class="form-group col-12"> 
+                            <select class="form-control"   placeholder="occupation" formControlName="occupation" required>
+                                <option value="" disabled selected>Occupation</option>
+                                <option value="Student">Student</option>
+                                <option value="Engineer">Engineer</option>
+                                <option valu="Doctor">Doctor</option>
+                                <option value="Teacher">Teacher</option>
+                            </select>
+                        </div>
                     </div>
-                    <div class="form-group "> 
-                        <select class="form-control" id="acupationFormControlSelect1" aria-placeholder="acupation">
-                        <option>Occupation</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                        </select>
+                    <div class="row col-4 col-sm-4">
+                        <div class="form-group col-12" > 
+                            <!-- <img src="assets\images\uplode button.svg "> -->
+                            <img src="assets\images\uplode icon.svg" class="input-right-icon" >
+                        </div>
                     </div>
-               </div>
-               <div class="button">
-                   <label for="" class="cnl">cancel</label>
-                   <button  type="submit" class="btn rp-btn " > Publish</button>
                 </div>
+              <div class="row col-12">
+               <div class="button col-12">
+                   <button type="submit" class="btn btn-link" (click)="resetForm()">cancel</button>
+                   <button  type="submit" class="btn rp-btn " [disabled]="!PublishForm.valid" > Publish </button>
+                </div>
+              </div>
             </form>
        </div> 
        </div>
-      
       </div>
     </div>
+ 

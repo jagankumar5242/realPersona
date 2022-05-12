@@ -10,10 +10,8 @@ form {
     background: #FFFFFF;
     box-shadow: 0px 8px 24px rgba(219, 237, 233, 0.8);
     border-radius: 12px; 
-    padding:3rem;
-    padding-left: 1rem;
-     
-     
+    padding:1.5rem;
+    padding-bottom: 1rem;    
 }
 .head{
     position: static;
@@ -29,14 +27,31 @@ form {
     text-align:justify;
 }
 .button{
-    text-align: end;
-     
+    text-align: end; 
+    padding-top: 2rem;
 }
- .cnl{
-      
-     padding-right: 4rem;  
- }
  .form-group{
      padding: 5px;
  }
+ .input-right-icon{
+    cursor: pointer;
+    border-radius: 12px;
+    position: relative;
+    height: 60vh;
+    padding-bottom: 2rem;
+    padding-left: 3rem;
+       
+ }
+ .btn-link{
+     text-decoration: none;
+     padding-right: 2rem;
+     color: black;
+ }
+.gender{
+    text-align: justify;
+    padding: inherit;
+}
+.rp-btn{
+    width: 7rem;
+} 
  

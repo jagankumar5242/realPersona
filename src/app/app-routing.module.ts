@@ -10,7 +10,7 @@ const routes: Routes = [
   {path:'',redirectTo:'/auth',pathMatch:'full'},
   {path:'auth',component:AuthComponent},
   {path:'dashbord',component:DashboardComponent},
-  {path:'Add-person',component:AddPersonComponent},
+  {path:'add-person',component:AddPersonComponent},
   {
     path:'dashboard',
     component: LayoutComponent,
