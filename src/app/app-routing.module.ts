@@ -7,7 +7,6 @@ import { LayoutComponent } from './header/layout/layout.component';
  
 
 const routes: Routes = [
-  {path:'',redirectTo:'/auth',pathMatch:'full'},
   {path:'auth',component:AuthComponent},
   {path:'dashbord',component:DashboardComponent},
   {path:'add-person',component:AddPersonComponent},
@@ -24,9 +23,15 @@ const routes: Routes = [
   //   redirectTo: 'dashboard'
   // }
   {
+    path: '',
+    redirectTo: 'auth',
+    pathMatch: 'full'
+  },
+  {
     path: '**',
-    redirectTo: 'dashboard'
-  }
+    redirectTo: 'auth',
+    pathMatch: 'full'
+  },
 ];
 
 @NgModule({

@@ -9,18 +9,19 @@ import { AddPersonService } from './add-person.service';
   styleUrls: ['./add-person.component.scss']
 })
 export class AddPersonComponent implements OnInit {
-   PublishForm!: FormGroup;
-   
+   publishForm!: FormGroup;
+   progress:number=0;
   constructor(private routerref:Router, public formbuilder:FormBuilder, public addperson:AddPersonService) { }
 
   ngOnInit(): void {
-    this.PublishForm=this.formbuilder.group({
+    this.publishForm=this.formbuilder.group({
       firstname:[''],
       lastname:[''],
       gender:[''],
       age:[''],
       location:[''],
-      occupation:['']
+      occupation:[''],
+      image:[null],
     })
   }
 
@@ -36,14 +37,21 @@ export class AddPersonComponent implements OnInit {
     back(): void {
       this.routerref.navigate(['/dashbord']);
    }
+
    resetForm(){
-     this.PublishForm.reset();
+     this.publishForm.reset();
    }
-    //  addPhoto(image:any){
-    //    this.addperson.addPhoto(image).subscribe(res=>{
-    //      console.log(res)
-    //    },err=>{
+
+    addPhoto(image:any){
+       this.addperson.addPhoto(image).subscribe(res=>{
+         console.log(res)
+       },err=>{
           
-    //    })
-    //  }
+       })
+     }
+
+     uplodeFile(event: any){
+       const file =event.target.files ? event.target.files[0]:'';
+       console.log(file);
+     }
 }

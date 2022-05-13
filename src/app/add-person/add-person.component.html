@@ -5,29 +5,29 @@
        </div>
        <div  class="row d-flex justify-content-center">
         <div class="form-group  col-8">
-            <form class="form " [formGroup]="PublishForm" (ngSubmit)="addData(PublishForm.value)">
+            <form class="form " [formGroup]="publishForm" (ngSubmit)="addData(publishForm.value)">
                 <h3 class="text">Add New Persona</h3><br>
-               <div class="row col-12">
-                    <div class=" row col-8">
-                        <div class="form-group col-12">
+               <div class="row">
+                    <div class="col-md-8 col-sm-12">
+                        <div class="form-group col-12 mb-3">
                             <input type="text" placeholder="First Name" class="form-control" formControlName="firstname" required>
                         </div>
 
-                        <div class="form-group col-12 ">
+                        <div class="form-group col-12 mb-3">
                             <input type="text" placeholder="Last Name" class="form-control" formControlName="lastname" required>
                         </div>
                     
-                        <div class="form-group gender col-12">
+                        <div class="form-group gender col-12 mb-3">
                         <label for="gender" id="gender" formControlName="gender">Gender</label><br>
                             <input type="radio" value="male" name="gender"> male  
                             <input type="radio" value="female" name="gender"> female    
                         </div>
 
-                        <div class="form-group col-6">
+                        <div class="form-group col-3 mb-3">
                             <input type="numbers" placeholder="Age"class="form-control" formControlName="age" >
                         </div>
 
-                        <div class="form-group  col-12"> 
+                        <div class="form-group  col-12 mb-3"> 
                             <select class="form-control"  formControlName="location" placeholder="select location" id="state" required>
                                 <option value="" disabled selected>location</option>
                                 <option value="Karnataka">Karnataka</option>
@@ -36,14 +36,8 @@
                                 <option value="Kerala">Kerala</option>
                             </select>
                         </div>
-                        <!-- <div class="form-group  col-12"> 
-                        <select name="location" id="state"   formControlName="location">
-                            <option value="karnataka">karanataka</option>
-                            <option value="karnataka">karanataka</option>
-                            <option value="karnataka">karanataka</option>
-                        </select>
-                    </div> -->
-                        <div class="form-group col-12"> 
+                       
+                        <div class="form-group col-12 mb-3"> 
                             <select class="form-control"   placeholder="occupation" formControlName="occupation" required>
                                 <option value="" disabled selected>Occupation</option>
                                 <option value="Student">Student</option>
@@ -53,17 +47,19 @@
                             </select>
                         </div>
                     </div>
-                    <div class="row col-4 col-sm-4">
-                        <div class="form-group col-12" > 
-                            <!-- <img src="assets\images\uplode button.svg "> -->
-                            <img src="assets\images\uplode icon.svg" class="input-right-icon" >
+                    <div class="col-md-4 col-sm-12 upload-outer-div">
+                        <div class=" upload-div">
+                            <button class="upload-btn">
+                                Upload
+                                <i class="bi bi-camera cameraIcon" formControlName="image" type="file" (change)="uplodeFile($event)"></i>
+                            </button>   
                         </div>
                     </div>
                 </div>
               <div class="row col-12">
                <div class="button col-12">
                    <button type="submit" class="btn btn-link" (click)="resetForm()">cancel</button>
-                   <button  type="submit" class="btn rp-btn " [disabled]="!PublishForm.valid" > Publish </button>
+                   <button  type="submit" class="btn rp-btn " [disabled]="!publishForm.valid" > Publish </button>
                 </div>
               </div>
             </form>
