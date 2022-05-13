@@ -12,7 +12,6 @@ import {PaginatorModule} from 'primeng/paginator';
     CommonModule,
     PaginatorModule,
     AdminDashboardRoutingModule,
-
   ],
   providers: [
   ],

@@ -14,10 +14,4 @@ export class UsersService {
     return this.http.get<any>(URL);
     
   } 
-  getPage(){
-    let list = [];
-     for (let index =0; index < 100; index++){
-       list.push()
-     }
-  } 
 }

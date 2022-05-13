@@ -26,11 +26,6 @@ const routes: Routes = [
     redirectTo: 'dashboard',
     pathMatch: 'full'
   },
-  {
-    path: '**',
-    redirectTo: 'auth',
-    pathMatch: 'full'
-  },
 ];
 
 @NgModule({
