@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Route, Router } from '@angular/router';
+import {  Router } from '@angular/router';
 import { AddPersonService } from './add-person.service';
 
 @Component({
@@ -11,6 +11,8 @@ import { AddPersonService } from './add-person.service';
 export class AddPersonComponent implements OnInit {
    publishForm!: FormGroup;
    progress:number=0;
+  url: any;
+   
   constructor(private routerref:Router, public formbuilder:FormBuilder, public addperson:AddPersonService) { }
 
   ngOnInit(): void {
@@ -21,7 +23,7 @@ export class AddPersonComponent implements OnInit {
       age:[''],
       location:[''],
       occupation:[''],
-      image:[null],
+      image:[''],
     })
   }
 
@@ -32,7 +34,7 @@ export class AddPersonComponent implements OnInit {
 
     })
     // console.log(this.PublishForm,data)
-  }
+   }
     
     back(): void {
       this.routerref.navigate(['/dashbord']);
@@ -42,16 +44,27 @@ export class AddPersonComponent implements OnInit {
      this.publishForm.reset();
    }
 
-    addPhoto(image:any){
-       this.addperson.addPhoto(image).subscribe(res=>{
-         console.log(res)
-       },err=>{
-          
-       })
-     }
-
      uplodeFile(event: any){
        const file =event.target.files ? event.target.files[0]:'';
        console.log(file);
      }
+
+
+    //  ulodeFile(event:any){
+    //    if(event.target.files){
+    //      var reader = new FileReader()
+    //      reader.readAsDataURL(event.target.files[0])
+    //      reader.onload =(event:any)=>{
+    //        this.url = event.target.results
+    //      }
+    //    }
+    //  }
+
+     // addPhoto(event:any){
+    //    this.addperson.addPhoto(event).subscribe(res=>{
+    //      console.log(res)
+    //    },err=>{
+          
+    //    })
+    //  }
 }

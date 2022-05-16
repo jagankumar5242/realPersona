@@ -1,7 +1,7 @@
  <div  class="add-container">
     <div class="w-100">
        <div class=" head col-sm-12 col-md-6 ">
-            <h5> <img src=assets\images\ArrowLeft.svg  (click)="back()"> Persona Management</h5>
+            <h5> <img src=assets\images\ArrowLeft.svg  (click)="back()" class="back-button"> Persona Management</h5>
        </div>
        <div  class="row d-flex justify-content-center">
         <div class="form-group  col-8">
@@ -18,7 +18,7 @@
                         </div>
                     
                         <div class="form-group gender col-12 mb-3">
-                        <label for="gender" id="gender" formControlName="gender">Gender</label><br>
+                        <label for="gender" id="gender" >Gender</label><br>
                             <input type="radio" value="male" name="gender"> male  
                             <input type="radio" value="female" name="gender"> female    
                         </div>
@@ -49,9 +49,10 @@
                     </div>
                     <div class="col-md-4 col-sm-12 upload-outer-div">
                         <div class=" upload-div">
-                            <button class="upload-btn">
+                            <input required class="d-none"type="file" (change)=" uplodeFile($event)" accept="image/*" #file formControlName="image" >
+                            <button class="upload-btn" (click)="file.click()">
                                 Upload
-                                <i class="bi bi-camera cameraIcon" formControlName="image" type="file" (change)="uplodeFile($event)"></i>
+                                <i class="bi bi-camera cameraIcon" type="file" ></i>
                             </button>   
                         </div>
                     </div>
