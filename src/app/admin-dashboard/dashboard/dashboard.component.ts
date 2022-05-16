@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UsersService } from './users.service';
 import { PrimeNGConfig } from 'primeng/api';
 
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',

@@ -5,12 +5,18 @@
     </div>
     <div class="row">
       <div class="col-sm-12 col-md-8">
-        <p class="p1">450</p>
-        <p class="p2">Personas</p>
-        <div class="search-bar">
-          <img src="assets\images\MagnifyingGlass.svg" class="input-left-icon">
-          <input type="search" placeholder="Search by Name,Location,Occupation" class="s1"/>
+        <div class="col-3">
+          <p class="p1">450</p>
+          <p class="p2">Personas</p>
         </div>
+        <div class="col-6">
+          <div class="search-bar">
+            <img src="assets\images\MagnifyingGlass.svg" class="input-left-icon">
+            <input type="search" placeholder="Search by Name,Location,Occupation" class="s1"/>
+          </div>
+        </div>
+       
+        
       </div>
       <div class="col-sm-12 col-md-4 d-flex justify-content-end align-items-center " >
         <a class="del" href="#"><img src="assets\images\Trash.svg" />Delete</a>
@@ -18,10 +24,10 @@
       </div>
     </div>
   </div>
-  <div class="container">
+  <div class="container d-flex justify-content-center align-items-center">
     <table class="table table-hover" >
       <thead>
-        <tr>
+        <tr class="tableHead">
           <th>
             <span class="custom-checkbox">
               <input type="checkbox" id="selectAll" />
@@ -41,7 +47,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of users" class="tr">
+        <tr *ngFor="let item of users" class="tablerow">
           <td>
             <span class="checkbox">
               <input
@@ -50,11 +56,11 @@
                 name="options[]"
                 value="1"
               />
-              <img src="assets\images\tukaram.svg">
+              <img src="assets\images\tukaram.svg" class="profile">
             </span>
           </td>
-          <td>{{ item.firstname }}</td>
-          <td>{{ item.lastname }}</td>
+          <th>{{ item.firstname }}</th>
+          <th>{{ item.lastname }}</th>
           <td>{{ item.gender }}</td>
           <td>{{ item.age }}</td>
           <td>{{ item.Location }}</td>
@@ -66,6 +72,7 @@
             <a href="#deleteEmployeeModal" class="delete" data-toggle="modal">
             <img src="assets\images\Trash.svg" alt="" />
             </a>
+            <!-- <button class="btn btn-deafult"><i class="bi bi-trash"></i></button> -->
             <a href="#editEmployeeModal" class="edit" data-toggle="modal">
               <img src="assets\images\edit.svg" alt="" />
             </a>
@@ -75,7 +82,7 @@
       <tfoot>
         <tr>
           <td colspan="10">
-            <p-paginator [rows]="5" [totalRecords]="50"></p-paginator>
+            <p-paginator [rows]="5" [totalRecords]="50" ></p-paginator>
           </td>
         </tr>
       </tfoot>

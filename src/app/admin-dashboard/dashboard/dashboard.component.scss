@@ -32,15 +32,13 @@
   display: flex;
   flex-direction: row;
   padding: 5px;
-  margin-left: 11%;
-  margin-top: 5px;
-
+  margin-left: 12%;
+  margin-top: 3px;
   width: 300px;
   height: 40px;
   background-color:white;
   border: none;
   outline-style: none;
-  //background-color: #ffffff;
   border: none;
   border-radius: 12px;
   font-size: 75%;
@@ -55,8 +53,7 @@
 .search-bar{
   display: flex;
   background-color:white;
-  border: none;
-  outline-style:5px solid #d5ebef;
+  border: 1.6px solid #DDDDDD;
   top: 25px;
   left: 19px;
   size: 25px;
@@ -66,8 +63,6 @@
   margin-top: 140px;
   margin-left: 155px;
   border-radius: 12px;
-
-
 }
 .rp-btn{
   border-color:#d5ebef;
@@ -86,7 +81,7 @@
 .input-left-icon{
   position: absolute;
   left: 14px;
-  top: 14px;
+  top: 12px;
   display: flex
 }
 .table {
@@ -96,28 +91,23 @@
   background-color: #ffffff;
   padding: 2px;
   text-align: center;
-//  display: flex;
-  // align-items: center;
-  // justify-content: center;
 }
-th {
-  //text-align: center;
-  font-size: 11px;
+.tableHead {
+  text-align: center;
+  font-size: 12px;
   width: auto;
   height: 70px;
   border-bottom: solid #e5e5e5;
-  padding-bottom: 15px;
+  vertical-align: middle;
 }
-.tr{
-  //  display:flex;
-  // align-items: center;
-  //   justify-content: center;
+.tablerow{
   text-align: center;
   width: 100%;
   font-size: 12px;
   height: 65px;
   padding-bottom: 15px;
   border-bottom: solid #e5e5e5;
+  vertical-align:middle;
 }
 tfoot{
   width: auto;
@@ -126,7 +116,7 @@ tfoot{
 .delete{
   padding: 20px;
 }
-p-paginator{
-  color: blue;
-  font-size: 15px;
+.profile{
+  border-radius: 5px;
+  
 }
