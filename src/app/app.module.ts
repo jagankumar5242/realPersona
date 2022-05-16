@@ -9,8 +9,6 @@ import { HeaderModule} from './header/header.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { backendInterceptor } from './interceptors/backened.interceptor';
 import { UsersService } from './admin-dashboard/dashboard/users.service';
- 
-
 import { AuthComponent } from './auth/auth/auth.component';
 import { AuthService } from './auth/auth/auth.service';
 import { AddPersonComponent } from './add-person/add-person.component';
@@ -19,7 +17,7 @@ import { AddPersonComponent } from './add-person/add-person.component';
     AppComponent,
     ManagementComponent,
     AuthComponent,
-    AddPersonComponent
+    AddPersonComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,7 +25,8 @@ import { AddPersonComponent } from './add-person/add-person.component';
     HeaderModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    
   ],
   providers: [
     UsersService,

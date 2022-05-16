@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse, HttpEvent, HttpHandler, HttpHeaders, HttpInterceptor, HttpRequest, HttpResponse } from '@angular/common/http'
+import { HttpErrorResponse, HttpEvent, HttpHandler, HttpHeaders, HttpInterceptor, HttpRequest, HttpResponse } from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { Router } from '@angular/router';
@@ -34,12 +34,10 @@ export class backendInterceptor implements HttpInterceptor {
                     if(error instanceof HttpErrorResponse){
                         // Handle error message here 
                     if(error.status===401){
-                        // this.router.navigate(['/login'])
+                        this.router.navigate(['/login'])
                     }
                 }
             }
         ))
-    }
-        
-    
+    }  
 }

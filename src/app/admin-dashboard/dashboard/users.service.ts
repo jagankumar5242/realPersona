@@ -13,5 +13,5 @@ export class UsersService {
     const URL = 'persona/users'
     return this.http.get<any>(URL);
     
-  }  
+  } 
 }
