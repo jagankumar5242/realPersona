@@ -18,7 +18,8 @@ export class backendInterceptor implements HttpInterceptor {
         let headers = new HttpHeaders();
         headers = headers.set('Authorization', token);
         headers = headers.set('Access-Control-Allow-Origin', '*');
-        headers = headers.set('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+        headers = headers.set('Access-Control-Allow-Headers', '*');
+        //headers = headers.set('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
         req = req.clone({
             url: url + '/' + req.url,
             headers: headers
