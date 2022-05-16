@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse, HttpEvent, HttpHandler, HttpHeaders, HttpInterceptor, HttpRequest, HttpResponse } from '@angular/common/http'
+import { HttpErrorResponse, HttpEvent, HttpHandler, HttpHeaders, HttpInterceptor, HttpRequest, HttpResponse } from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { Router } from '@angular/router';
@@ -18,7 +18,8 @@ export class backendInterceptor implements HttpInterceptor {
         let headers = new HttpHeaders();
         headers = headers.set('Authorization', token);
         headers = headers.set('Access-Control-Allow-Origin', '*');
-        headers = headers.set('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+        headers = headers.set('Access-Control-Allow-Headers', '*');
+        //headers = headers.set('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
         req = req.clone({
             url: url + '/' + req.url,
             headers: headers
@@ -34,12 +35,10 @@ export class backendInterceptor implements HttpInterceptor {
                     if(error instanceof HttpErrorResponse){
                         // Handle error message here 
                     if(error.status===401){
-                        // this.router.navigate(['/login'])
+                        this.router.navigate(['/login'])
                     }
                 }
             }
         ))
-    }
-        
-    
+    }  
 }

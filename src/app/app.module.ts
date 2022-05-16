@@ -18,7 +18,7 @@ import { AddPersonService } from './add-person/add-person.service';
     AppComponent,
     ManagementComponent,
     AuthComponent,
-    AddPersonComponent
+    AddPersonComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,7 +26,8 @@ import { AddPersonService } from './add-person/add-person.service';
     HeaderModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    
   ],
   providers: [
     AuthService,

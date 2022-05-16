@@ -4,42 +4,50 @@
       <label class="lab1">Persona Management</label>
     </div>
     <div class="row">
-      <div class="col-sm-12 col-md-8">
-        <p class="p1">450</p>
-        <p class="p2">Personas</p>
-          <!-- <img src="assets\images\MagnifyingGlass.svg" id="magnifying"> -->
-          <input type="search" placeholder="Search by Name,Location,Occupation" class="s1"/>
+      <div class="col-sm-12 col-md-8 row">
+        <div class="col-1">
+          <label class="p1">450</label>
+          <label class="p2">Personas</label>
+        </div>
+        <div class="col-6 d-flex align-items-center d-flex align-items-center">
+          <div class="position-relative w-100">
+            <img src="assets\images\MagnifyingGlass.svg" class="input-left-icon">
+            <input type="search" placeholder="Search by Name,Location,Occupation" class="search-input"/>
+          </div>
+        </div>
+       
+        
       </div>
-      <div class="col-sm-12 col-md-4 d-flex justify-content-end align-items-center" >
+      <div class="col-sm-12 col-md-4 d-flex justify-content-end align-items-center " >
         <a class="del" href="#"><img src="assets\images\Trash.svg" />Delete</a>
-        <button class="btn btn-primary">+ New Persona</button>
+        <button class="rp-btn" routerLink="/Add-person" onclick="reRoute()">+ New Persona</button>
       </div>
     </div>
   </div>
-  <div class="container">
+  <div class="d-flex justify-content-center align-items-center">
     <table class="table table-hover" >
       <thead>
-        <tr>
+        <tr class="tableHead">
           <th>
             <span class="custom-checkbox">
               <input type="checkbox" id="selectAll" />
-              <label for="selectAll"></label>
+              <img src="assets\images\empty-image.svg">
             </span>
           </th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Gender</th>
-          <th>Age</th>
-          <th>Location</th>
-          <th>Occupation</th>
-          <th>Uploaded by</th>
-          <th>Uploaded on</th>
-          <th>No.of downloads</th>
+          <th>First Name <a href=""><img src="assets\images\arrow-down.svg"></a></th>
+          <th>Last Name <img src="assets\images\arrow-down.svg"></th>
+          <th>Gender <img src="assets\images\arrow-down.svg"></th>
+          <th>Age <img src="assets\images\arrow-down.svg"></th>
+          <th>Location <img src="assets\images\arrow-down.svg"></th>
+          <th>Occupation <img src="assets\images\arrow-down.svg"></th>
+          <th>Uploaded by <img src="assets\images\arrow-down.svg"></th>
+          <th>Uploaded on <img src="assets\images\arrow-down.svg"></th>
+          <th>No.of downloads <img src="assets\images\arrow-down.svg"></th>
           <th>Action</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of users">
+        <tr *ngFor="let item of users" class="tablerow">
           <td>
             <span class="checkbox">
               <input
@@ -48,130 +56,37 @@
                 name="options[]"
                 value="1"
               />
-              <label for="checkbox1"></label>
+              <img src="assets\images\tukaram.svg" class="profile">
             </span>
           </td>
-          <td>{{ item.firstname }}</td>
-          <td>{{ item.lastname }}</td>
+          <th>{{ item.firstname }}</th>
+          <th>{{ item.lastname }}</th>
           <td>{{ item.gender }}</td>
           <td>{{ item.age }}</td>
           <td>{{ item.Location }}</td>
           <td>{{ item.Occupation }}</td>
           <td>{{ item.upBy }}</td>
           <td>{{ item.upOn }}</td>
-          <td></td>
+          <td>{{ item.nodownloads }}</td>
           <td>
             <a href="#deleteEmployeeModal" class="delete" data-toggle="modal">
-              <img src="assets\images\Trash.svg" alt="" />
+            <img src="assets\images\Trash.svg" alt="" />
             </a>
+            <!-- <button class="btn btn-deafult"><i class="bi bi-trash"></i></button> -->
             <a href="#editEmployeeModal" class="edit" data-toggle="modal">
               <img src="assets\images\edit.svg" alt="" />
             </a>
           </td>
-        </tr>
-        <tr>
-          <td>
-            <span class="custom-checkbox">
-              <input
-                type="checkbox"
-                id="checkbox2"
-                name="options[]"
-                value="1"
-              />
-              <label for="checkbox2"></label>
-            </span>
-          </td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>
-            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal">
-              <img src="assets\images\Trash.svg" alt="" />
-            </a>
-            <a href="#editEmployeeModal" class="edit" data-toggle="modal">
-              <img src="assets\images\edit.svg" alt="" />
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <span class="custom-checkbox">
-              <input
-                type="checkbox"
-                id="checkbox3"
-                name="options[]"
-                value="1"
-              />
-              <label for="checkbox3"></label>
-            </span>
-          </td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>
-            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal">
-              <img src="assets\images\Trash.svg" alt="" />
-            </a>
-            <a href="#editEmployeeModal" class="edit" data-toggle="modal">
-              <img src="assets\images\edit.svg" alt="" />
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <span class="custom-checkbox">
-              <input
-                type="checkbox"
-                id="checkbox4"
-                name="options[]"
-                value="1"
-              />
-              <label for="checkbox4"></label>
-            </span>
-          </td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>
-            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal">
-              <img src="assets\images\Trash.svg" alt="" />
-            </a>
-            <a href="#editEmployeeModal" class="edit" data-toggle="modal">
-              <img src="assets\images\edit.svg" alt="" />
-            </a>
-          </td>
-        </tr>
+        </tr> 
       </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="10">
+            <p-paginator [rows]="5" [totalRecords]="50" ></p-paginator>
+          </td>
+        </tr>
+      </tfoot>
     </table>
-    <!-- <div class="clearfix">
-       <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div> 
-       <ul class="pagination">
-        <li class="page-item disabled"><a href="#">Previous</a></li>
-        <li class="page-item"><a href="#" class="page-link">1</a></li>
-        <li class="page-item"><a href="#" class="page-link">2</a></li>
-        <li class="page-item active"><a href="#" class="page-link">3</a></li>
-        <li class="page-item"><a href="#" class="page-link">4</a></li>
-        <li class="page-item"><a href="#" class="page-link">5</a></li>
-        <li class="page-item"><a href="#" class="page-link">Next</a></li>
-       </ul>
-      </div> -->
+       
   </div>
 </div>
