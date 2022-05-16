@@ -17,40 +17,42 @@ export class DashboardComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.users = [{
-      firstname : 'charan',
-      lastname : 'Reddy',
-      gender : 'male', age : 23, Location : 'Bengaluru', Occupation : 'IT',
-      upBy : 'king', upOn : '28/4/1999', nodownloads : '10' 
+    // this.users = [{
+    //   firstname : 'charan',
+    //   lastname : 'Reddy',
+    //   gender : 'male', age : 23, Location : 'Bengaluru', Occupation : 'IT',
+    //   upBy : 'king', upOn : '28/4/1999', nodownloads : '10' 
       
-    },
-    {
-      firstname : 'charan',
-      lastname : 'Reddy',
-      gender : 'male', age : 23, Location : 'Bengalure', Occupation : 'IT',
-      upBy : 'king', upOn : '28/4/1999',nodownloads : '10' 
+    // },
+    // {
+    //   firstname : 'charan',
+    //   lastname : 'Reddy',
+    //   gender : 'male', age : 23, Location : 'Bengalure', Occupation : 'IT',
+    //   upBy : 'king', upOn : '28/4/1999',nodownloads : '10' 
       
-    },
-    {
-      firstname : 'charan',
-      lastname : 'Reddy',
-      gender : 'male', age : 23, Location : 'Bengalure', Occupation : 'IT',
-      upBy : 'king', upOn : '28/4/1999',nodownloads : '10' 
+    // },
+    // {
+    //   firstname : 'charan',
+    //   lastname : 'Reddy',
+    //   gender : 'male', age : 23, Location : 'Bengalure', Occupation : 'IT',
+    //   upBy : 'king', upOn : '28/4/1999',nodownloads : '10' 
       
-    },
-    {
-      firstname : 'charan',
-      lastname : 'Reddy',
-      gender : 'male', age : 23, Location : 'Bengalure', Occupation : 'IT',
-      upBy : 'king', upOn : '28/4/1999' ,nodownloads : '10'
+    // },
+    // {
+    //   firstname : 'charan',
+    //   lastname : 'Reddy',
+    //   gender : 'male', age : 23, Location : 'Bengalure', Occupation : 'IT',
+    //   upBy : 'king', upOn : '28/4/1999' ,nodownloads : '10'
       
-    }];
+    // }];
     this.usersService.getUsers().subscribe((res:any)=> {
     this.users = res.data;
      });
-     this.primengConfig.ripple = true;
   }
   reRoute(){
     this.router.navigate(['/Add-person'])
   }
+  // this.employeService.getEmployes().subscribe((res:any) =>{
+  //   this.employees = res.data;
+  //   this.filterEmployee =[...this.employees.filter(employees => employees.employee_age > 40)]
 }
