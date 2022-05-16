@@ -1,4 +1,4 @@
- <div  class="add-container">
+<div  class="add-container">
     <div class="w-100">
        <div class=" head col-sm-12 col-md-6 ">
             <h5> <img src=assets\images\ArrowLeft.svg  (click)="back()" class="back-button"> Persona Management</h5>
@@ -11,16 +11,23 @@
                     <div class="col-md-8 col-sm-12">
                         <div class="form-group col-12 mb-3">
                             <input type="text" placeholder="First Name" class="form-control" formControlName="firstname" required>
+                           <div class="text-danger">
+                            <small  *ngIf="publishForm['controls']['firstname'].touched && publishForm['controls']['firstname']['errors']">firstname is required</small> 
+                           </div>  
                         </div>
 
                         <div class="form-group col-12 mb-3">
                             <input type="text" placeholder="Last Name" class="form-control" formControlName="lastname" required>
+                           <div  class="text-danger">
+                            <small *ngIf="publishForm['controls']['lastname'].touched && publishForm['controls']['lastname']['errors']">lastname is required</small>   
+                           </div>
                         </div>
                     
                         <div class="form-group gender col-12 mb-3">
                         <label for="gender" id="gender" >Gender</label><br>
                             <input type="radio" value="male" name="gender" formControlName="gender"> male  
-                            <input type="radio" value="female" name="gender" formControlName="gender"> female    
+                            <input type="radio" value="female" name="gender" formControlName="gender"> female 
+                            <small class="text-danger" *ngIf="publishForm['controls']['gender'].touched && publishForm['controls']['gender']['errors']">gender is required</small>      
                         </div>
 
                         <div class="form-group col-3 mb-3">
@@ -35,6 +42,9 @@
                                 <option value="Thamilnadu">Thamilnadu</option>
                                 <option value="Kerala">Kerala</option>
                             </select>
+                            <div class="text-danger">
+                                <small  *ngIf="publishForm['controls']['location'].touched && publishForm['controls']['location']['errors']">location is required</small>   
+                            </div>
                         </div>
                        
                         <div class="form-group col-12 mb-3"> 
@@ -45,11 +55,15 @@
                                 <option valu="Doctor">Doctor</option>
                                 <option value="Teacher">Teacher</option>
                             </select>
+                            <div class="text-danger">
+                                <small  *ngIf="publishForm['controls']['occupation'].touched && publishForm['controls']['occupation']['errors']">occupation required</small>   
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-12 upload-outer-div">
                         <div class=" upload-div">
-                            <input required class="d-none"type="file" (change)=" uplodeFile($event)" accept="image/*" #file formControlName="image" >
+                            <img src="{{url}}">
+                            <input required class="d-none"type="file" (change)=" uplodeFile($event)" accept="image/*" #file formControlName="image" >   
                             <button class="upload-btn" (click)="file.click()">
                                 Upload
                                 <i class="bi bi-camera cameraIcon" type="file" ></i>

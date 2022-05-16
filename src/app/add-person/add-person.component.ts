@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {  Router } from '@angular/router';
 import { AddPersonService } from './add-person.service';
 
@@ -17,13 +17,13 @@ export class AddPersonComponent implements OnInit {
 
   ngOnInit(): void {
     this.publishForm=this.formbuilder.group({
-      firstname:[''],
-      lastname:[''],
-      gender:[''],
-      age:[''],
-      location:[''],
-      occupation:[''],
-      image:[''],
+      firstname:['',Validators.compose([Validators.required])],
+      lastname:['',Validators.compose([Validators.required])],
+      gender:['',Validators.compose([Validators.required])],
+      age:['',Validators.compose([Validators.required])],
+      location:['',Validators.compose([Validators.required])],
+      occupation:['',Validators.compose([Validators.required])],
+      image:['',Validators.compose([Validators.required])],
     })
   }
 
@@ -46,16 +46,21 @@ export class AddPersonComponent implements OnInit {
 
      uplodeFile(event: any){
        const file =event.target.files ? event.target.files[0]:'';
-       this.addperson.uplodeFile(event).subscribe(res=>{
-        console.log(res)
-      },err=>{
-         
-      })
-      //  console.log(file);
+       console.log(file);
      }
 
+    //  uplodeFIle(event:any){
+    //    this.addperson.uplodeFile(event).subscribe(res=>{
+    //      console.log(res)
+    //    },err=>{
+          
+    //    })
+    //  }
 
-    //  ulodeFile(event:any){
+  }
+
+
+      //  ulodeFile(event:any){
     //    if(event.target.files){
     //      var reader = new FileReader()
     //      reader.readAsDataURL(event.target.files[0])
@@ -65,11 +70,3 @@ export class AddPersonComponent implements OnInit {
     //    }
     //  }
 
-    // //  addPhoto(event:any){
-    // //    this.addperson.addPhoto(event).subscribe(res=>{
-    // //      console.log(res)
-    // //    },err=>{
-          
-    // //    })
-    //  }
-}

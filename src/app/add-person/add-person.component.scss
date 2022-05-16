@@ -12,6 +12,7 @@ form {
     border-radius: 12px; 
     padding:1.5rem;
     padding-bottom: 1rem; 
+    padding-right: 3rem;
        
 }
 .head{
@@ -88,9 +89,13 @@ form {
      
 }
 .back-button{
-    cursor: pointer;
-     
+    cursor: pointer;    
 }
- 
+.text-danger{
+     text-align:left;     
+}
+.del-button{
+    text-align: left;
+}
 
  
