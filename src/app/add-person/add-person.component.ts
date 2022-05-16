@@ -46,7 +46,12 @@ export class AddPersonComponent implements OnInit {
 
      uplodeFile(event: any){
        const file =event.target.files ? event.target.files[0]:'';
-       console.log(file);
+       this.addperson.uplodeFile(event).subscribe(res=>{
+        console.log(res)
+      },err=>{
+         
+      })
+      //  console.log(file);
      }
 
 
@@ -60,11 +65,11 @@ export class AddPersonComponent implements OnInit {
     //    }
     //  }
 
-     // addPhoto(event:any){
-    //    this.addperson.addPhoto(event).subscribe(res=>{
-    //      console.log(res)
-    //    },err=>{
+    // //  addPhoto(event:any){
+    // //    this.addperson.addPhoto(event).subscribe(res=>{
+    // //      console.log(res)
+    // //    },err=>{
           
-    //    })
+    // //    })
     //  }
 }

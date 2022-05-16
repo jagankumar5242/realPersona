@@ -13,7 +13,7 @@ export class AddPersonService {
   addData(payLoad:any):Observable<any[]>{
     return this.http.post<any[]>(this.url,payLoad)
   }
-addPhoto(payLoad:any):Observable<any[]>{
-  return this.http.post<any[]>(this.url2,payLoad)
-}
+  uplodeFile(payLoad:any):Observable<any[]>{
+    return this.http.post<any[]>(this.url2,payLoad)
+  }
 }
