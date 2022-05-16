@@ -49,13 +49,13 @@ export class AddPersonComponent implements OnInit {
        console.log(file);
      }
 
-    //  uplodeFIle(event:any){
-    //    this.addperson.uplodeFile(event).subscribe(res=>{
-    //      console.log(res)
-    //    },err=>{
+     uplodeFIle(event:any){
+       this.addperson.uplodeFile(event).subscribe(res=>{
+         console.log(res)
+       },err=>{
           
-    //    })
-    //  }
+       })
+     }
 
   }
 
