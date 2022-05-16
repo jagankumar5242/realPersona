@@ -12,6 +12,7 @@ import { UsersService } from './admin-dashboard/dashboard/users.service';
 import { AuthComponent } from './auth/auth/auth.component';
 import { AuthService } from './auth/auth/auth.service';
 import { AddPersonComponent } from './add-person/add-person.component';
+import { AddPersonService } from './add-person/add-person.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +30,8 @@ import { AddPersonComponent } from './add-person/add-person.component';
     
   ],
   providers: [
+    AuthService,
+    AddPersonService,
     UsersService,
     AuthService,
     {
