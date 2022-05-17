@@ -11,8 +11,8 @@ import { AddPersonService } from './add-person.service';
 export class AddPersonComponent implements OnInit {
    publishForm!: FormGroup;
    progress:number=0;
-  url: any;
-   
+   url: any;
+    
   constructor(private routerref:Router, public formbuilder:FormBuilder, public addperson:AddPersonService) { }
 
   ngOnInit(): void {
@@ -30,6 +30,7 @@ export class AddPersonComponent implements OnInit {
   addData(data: any){ 
     this.addperson.addData(data).subscribe(res=>{
        console.log(res)
+       
     }, err=>{
 
     })
@@ -49,13 +50,13 @@ export class AddPersonComponent implements OnInit {
        console.log(file);
      }
 
-     uplodeFIle(event:any){
-       this.addperson.uplodeFile(event).subscribe(res=>{
-         console.log(res)
-       },err=>{
+    //  uplodeFile(event:any){
+    //    this.addperson.uplodeFile(event).subscribe(res=>{
+    //      console.log(res)
+    //    },err=>{
           
-       })
-     }
+    //    })
+    //  }
 
   }
 

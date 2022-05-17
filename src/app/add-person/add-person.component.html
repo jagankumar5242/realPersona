@@ -1,29 +1,28 @@
-<div  class="add-container">
-    <div class="w-100">
-       <div class=" head col-sm-12 col-md-6 ">
-            <h5> <img src=assets\images\ArrowLeft.svg  (click)="back()" class="back-button"> Persona Management</h5>
+ <div class="w-100">
+    <div class=" head col-sm-12 col-md-8 ">
+            <h5><img src=assets\images\ArrowLeft.svg  (click)="back()" class="back-button"> Persona Management</h5>
        </div>
        <div  class="row d-flex justify-content-center">
-        <div class="form-group  col-8">
+        <div class="form-group  formouter-div col-8">
             <form class="form " [formGroup]="publishForm" (ngSubmit)="addData(publishForm.value)">
                 <h3 class="text">Add New Persona</h3><br>
                <div class="row">
                     <div class="col-md-8 col-sm-12">
-                        <div class="form-group col-12 mb-3">
+                        <div class="form-group col-10 mb-3">
                             <input type="text" placeholder="First Name" class="form-control" formControlName="firstname" required>
                            <div class="text-danger">
                             <small  *ngIf="publishForm['controls']['firstname'].touched && publishForm['controls']['firstname']['errors']">firstname is required</small> 
                            </div>  
                         </div>
 
-                        <div class="form-group col-12 mb-3">
+                        <div class="form-group col-10 mb-3">
                             <input type="text" placeholder="Last Name" class="form-control" formControlName="lastname" required>
                            <div  class="text-danger">
                             <small *ngIf="publishForm['controls']['lastname'].touched && publishForm['controls']['lastname']['errors']">lastname is required</small>   
                            </div>
                         </div>
                     
-                        <div class="form-group gender col-12 mb-3">
+                        <div class="form-group gender col-10 mb-3">
                         <label for="gender" id="gender" >Gender</label><br>
                             <input type="radio" value="male" name="gender" formControlName="gender"> male  
                             <input type="radio" value="female" name="gender" formControlName="gender"> female 
@@ -31,10 +30,10 @@
                         </div>
 
                         <div class="form-group col-3 mb-3">
-                            <input type="numbers" placeholder="Age"class="form-control" formControlName="age" >
+                            <input type="numbers" placeholder="Age"class="form-control" formControlName="age" maxlength="2" >
                         </div>
 
-                        <div class="form-group  col-12 mb-3"> 
+                        <div class="form-group  col-10 mb-3"> 
                             <select class="form-control"  formControlName="location" placeholder="select location" id="state" required>
                                 <option value="" disabled selected>location</option>
                                 <option value="Karnataka">Karnataka</option>
@@ -46,8 +45,8 @@
                                 <small  *ngIf="publishForm['controls']['location'].touched && publishForm['controls']['location']['errors']">location is required</small>   
                             </div>
                         </div>
-                       
-                        <div class="form-group col-12 mb-3"> 
+                    
+                        <div class="form-group col-10 mb-3"> 
                             <select class="form-control"   placeholder="occupation" formControlName="occupation" required>
                                 <option value="" disabled selected>Occupation</option>
                                 <option value="Student">Student</option>
@@ -72,21 +71,17 @@
                     </div>
                 </div>
               <div class="row col-12">
-               <div class="button col-12">
-                   <!-- <div class="button-del col" >
-                    <button class="delete-btn">
-                        <i class="bi bi-trash"></i>
-                        Delete  
-                    </button>
-                   </div> -->
-                   <!-- <button class="bi bi-trash">delete</button> -->
-                   <button type="submit" class="btn btn-link" (click)="resetForm()">cancel</button>
-                   <button  type="submit" class="btn rp-btn " [disabled]="!publishForm.valid" > Publish </button>
+               <div class="button col-12"> 
+                   <ul>
+                    <button class="bi bi-trash delete-btn"> Delete</button>
+                    <button type="submit" class="btn btn-link" (click)="resetForm()">cancel</button>
+                    <button  type="submit" class="btn rp-btn " [disabled]="!publishForm.valid" > Publish </button>
+                   </ul> 
                 </div>     
               </div>
             </form>
        </div> 
-       </div>
-      </div>
     </div>
+</div>
+     
  
