@@ -12,6 +12,8 @@ export class AddPersonComponent implements OnInit {
    publishForm!: FormGroup;
    progress:number=0;
    url: any;
+   value1:any;
+   message=false;
     
   constructor(private routerref:Router, public formbuilder:FormBuilder, public addperson:AddPersonService) { }
 
@@ -29,8 +31,9 @@ export class AddPersonComponent implements OnInit {
 
   addData(data: any){ 
     this.addperson.addData(data).subscribe(res=>{
-       console.log(res)
-       
+       //console.log(res)
+       this.message=true;
+       this.publishForm.reset({ })
     }, err=>{
 
     })
@@ -49,7 +52,10 @@ export class AddPersonComponent implements OnInit {
        const file =event.target.files ? event.target.files[0]:'';
        console.log(file);
      }
-
+     
+     delete(){
+       console.log('delete');
+     }
     //  uplodeFile(event:any){
     //    this.addperson.uplodeFile(event).subscribe(res=>{
     //      console.log(res)

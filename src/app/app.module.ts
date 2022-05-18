@@ -12,6 +12,8 @@ import { AuthComponent } from './auth/auth/auth.component';
 import { AuthService } from './auth/auth/auth.service';
 import { AddPersonComponent } from './add-person/add-person.component';
 import { AddPersonService } from './add-person/add-person.service';
+import { InputTextModule } from "primeng/inputtext";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +28,7 @@ import { AddPersonService } from './add-person/add-person.service';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
+    InputTextModule
     
   ],
   providers: [

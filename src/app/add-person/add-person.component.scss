@@ -18,7 +18,7 @@ form {
 .head{
     font-family: 'Public Sans';
     font-style: normal;
-    font-size: 14px;
+    font-size: 24px;
     text-transform: capitalize;
     flex: auto;
     padding-top: 4rem;
@@ -84,13 +84,16 @@ form {
 .upload-outer-div{
     border: 1.6px dashed #56C6DC;
     border-radius: 12px;
-    padding: 1rem;
-    // height: 57vh;
-    // width:35vh;   
+    padding: 1rem;     
      
 }
+.back-div{
+    font-size: 14px;
+    font-family: 'public sans';
+}
 .back-button{
-    cursor: pointer;    
+    cursor: pointer; 
+    
 }
 .text-danger{
      text-align:left;     
@@ -105,9 +108,50 @@ form {
     padding-left: 1rem;
     padding-right: 1rem;  
 }
+.delete-div{
+    text-align: left;
+    padding-top: 2rem;
+}
+.input-radius{
+    border-radius: 12px;
+    height: 64px;
+
+}
+.alert-success{
+   padding: 10px 16px 10px 16px;
+   text-align: center;
+   border-radius: 12px;
+   color:rgb(10, 186, 10);
+   background-color:#b7e9f1 ;
+   font-size: 14px;   
+}
+ 
+
+
+
+
+
+// .form-lable{
+//     position: relative;
+//     right: 7rem;
+//     bottom: 2rem;
+//     text-align: left;
+//     cursor:text;
+// }
+// .textbox:focus ~ .form-lable{
+//     top:0;
+//     bottom: 1rem;
+//     font-size:16px ;
+// }
 
 // .bi-trash{
 //     //  text-align: left;
 // }
-
+// .float-container {
+//     border: solid 1px #ccc;
+//   }
+//   .float-container input {
+//     border: none;
+//     outline: 0;
+//   }
  
