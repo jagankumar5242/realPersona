@@ -11,9 +11,9 @@ import { AddPersonService } from './add-person.service';
 export class AddPersonComponent implements OnInit {
    publishForm!: FormGroup;
    progress:number=0;
-   url: any;
-   value1:any;
    message=false;
+   fileDetails: any;
+   imageURL:any;
     
   constructor(private routerref:Router, public formbuilder:FormBuilder, public addperson:AddPersonService) { }
 
@@ -46,23 +46,40 @@ export class AddPersonComponent implements OnInit {
 
    resetForm(){
      this.publishForm.reset();
+     this.routerref.navigate(['/dashbord']);
    }
 
      uplodeFile(event: any){
-       const file =event.target.files ? event.target.files[0]:'';
-       console.log(file);
+       const mimeType = event.target.files[0].type;
+        if (mimeType.match(/image\/*/) == null) {
+            //this.message = "Only images are supported.";
+            return;
+        }
+
+        const reader = new FileReader();
+        this.fileDetails = event.target.files[0]
+        reader.readAsDataURL(event.target.files[0]); 
+        reader.onload = (_event) => { 
+            this.imageURL = reader.result; 
+        }
+       
      }
      
-     delete(){
-       console.log('delete');
+     deletePerson(data:any){
+       this.addperson.deletePerson(data).subscribe(res=>{
+         console.log(res)
+       },err=>{
+
+       })
+      // console.log('delete');
      }
-    //  uplodeFile(event:any){
-    //    this.addperson.uplodeFile(event).subscribe(res=>{
-    //      console.log(res)
-    //    },err=>{
+     uplodefile(event:any){
+       this.addperson.uplodefile(event).subscribe(res=>{
+         console.log(res)
+       },err=>{
           
-    //    })
-    //  }
+       })
+     }
 
   }
 

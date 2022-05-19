@@ -74,26 +74,37 @@
                     </div>
                     <div class="col-md-4 col-sm-12 upload-outer-div">
                         <div class=" upload-div">
-                            <img src="{{url}}">
-                            <input required class="d-none "type="file" (change)=" uplodeFile($event)" accept="image/*" #file formControlName="image" >   
-                            <button class="upload-btn" (click)="file.click()">
+                            <img class="w-100 h-100"*ngIf="imageURL && fileDetails" [src]="imageURL">
+                            <ng-container *ngIf="!fileDetails">
+                                <input required class="d-none "type="file" (change)=" uplodeFile($event)" accept="image/*" #file formControlName="image" >   
+                                <button class="upload-btn" (click)="file.click()">
+                                    Upload
+                                    <i class="bi bi-camera cameraIcon" type="file" ></i>
+                                </button>  
+                            </ng-container> 
+                        </div>
+                        <div class="hiden-btn">
+                            <button class="upload-btn" (click)="uplodefile($event)">
                                 Upload
                                 <i class="bi bi-camera cameraIcon" type="file" ></i>
-                            </button>   
-                        </div>
+                            </button>  
+                        </div>  
                     </div>
                 </div>
               <div class="row col-12 col-sm-12">
                   <div class="col-6 delete-div">
-                    <button class="bi bi-trash delete-btn" (click)="delete()"> Delete</button>
+                    <button class="bi bi-trash delete-btn" (click)="deletePerson('')"> Delete</button>
                   </div>
                <div class="button col-6"> 
-                    <button type="submit" class="btn btn-link" (click)="resetForm()">cancel  </button>
-                    <button  type="submit" class="btn rp-btn " [disabled]="!publishForm.valid" > Publish </button>    
+                    <button type="submit" class="btn btn-link " (click)="resetForm()">cancel</button>
+                    <button  type="submit" class="btn rp-btn  mx-3" [disabled]="!publishForm.valid" > Publish </button>    
                 </div>     
               </div>
             </form>
        </div> 
     </div>
 </div>
+  
+ 
+ 
   

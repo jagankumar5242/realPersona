@@ -63,9 +63,12 @@ form {
     background: #FFFFFF;
     padding: 0.5rem;
     position: relative;
-    padding-left: 1.5rem;
-     
+    padding-left: 1.5rem;    
 }
+.hiden-btn {
+     padding: 1rem;  
+}
+
 .cameraIcon{
     cursor: pointer;
     position: absolute;
@@ -84,7 +87,8 @@ form {
 .upload-outer-div{
     border: 1.6px dashed #56C6DC;
     border-radius: 12px;
-    padding: 1rem;     
+    padding: 1rem;   
+    padding-bottom: 4rem;  
      
 }
 .back-div{
@@ -122,7 +126,7 @@ form {
    text-align: center;
    border-radius: 12px;
    color:rgb(10, 186, 10);
-   background-color:#b7e9f1 ;
+   background-color: #DEF8F4;
    font-size: 14px;   
 }
  
