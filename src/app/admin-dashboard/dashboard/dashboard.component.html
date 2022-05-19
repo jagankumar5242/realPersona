@@ -15,22 +15,21 @@
             <input type="search" placeholder="Search by Name,Location,Occupation" class="search-input"/>
           </div>
         </div>
-       
-        
       </div>
       <div class="col-sm-12 col-md-4 d-flex justify-content-end align-items-center " >
-        <a class="del" href="#"><img src="assets\images\Trash.svg" />Delete</a>
+        <a class="del" href="#" *ngIf="showDelete" onclick="showPopUp()"><img src="assets\images\Trash.svg" />Delete</a>
         <button class="rp-btn" routerLink="/Add-person" onclick="reRoute()">+ New Persona</button>
       </div>
     </div>
   </div>
   <div class="d-flex justify-content-center align-items-center">
-    <table class="table table-hover" >
+    <table class="table table-hover">
       <thead>
         <tr class="tableHead">
           <th>
             <span class="custom-checkbox">
-              <input type="checkbox" id="selectAll" />
+              <input type="checkbox" class="custom-control-input" id="checkbox-2" (click)="CheckAllOptions()" />
+              <!-- <p-checkbox (click)="CheckAllOptions()"  [binary]="true"></p-checkbox> -->
               <img src="assets\images\empty-image.svg">
             </span>
           </th>
@@ -47,15 +46,17 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of users" class="tablerow">
+        <tr *ngFor="let item of users | paginate: { itemsPerPage:3,currentPage:p}"  class="tablerow">
           <td>
-            <span class="checkbox">
+            <span>
+              <!-- <p-checkbox [(ngModel)]="item.isSelected" [value]="item.value"
+              (click)=" taggleDelete(item, $event)"  [binary]="true"></p-checkbox> -->
               <input
                 type="checkbox"
-                id="checkbox1"
-                name="options[]"
-                value="1"
-              />
+                id="checkbox"
+                class="custom-control-input"
+                [(ngModel)]="item.isSelected" [value]="item.value"
+                 (click)=" taggleDelete(item, $event)"/>
               <img src="assets\images\tukaram.svg" class="profile">
             </span>
           </td>
@@ -63,30 +64,33 @@
           <th>{{ item.lastname }}</th>
           <td>{{ item.gender }}</td>
           <td>{{ item.age }}</td>
-          <td>{{ item.Location }}</td>
+          <td>{{ item.location }}</td>
           <td>{{ item.occupation }}</td>
-          <td>{{ item.upBy }}</td>
-          <td>{{ item.upOn }}</td>
-          <td>{{ item.nodownloads }}</td>
+          <td>{{ item.uploaded_by }}</td>
+          <td>{{ item.create_time | date:'d/M/yyyy, h:m:a ' }}(IST)</td>
+          <td>{{ item.no_of_downloads }}</td>
           <td>
-            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal">
+            <!-- <a  (click)="deletePerson(item)" class="delete" data-toggle="modal"> 
             <img src="assets\images\Trash.svg" alt="" />
-            </a>
-            <!-- <button class="btn btn-deafult"><i class="bi bi-trash"></i></button> -->
-            <a href="#editEmployeeModal" class="edit" data-toggle="modal">
-              <img src="assets\images\edit.svg" alt="" />
-            </a>
+            </a> -->
+            <button class="btn btn-deafult" (click)="deletePerson(item)"><img src="assets\images\Trash.svg" alt="" /></button>
+            <button class="btn btn-deafult" (click)="editPerson(item)" routerLink="/Add-person"><img src="assets\images\edit.svg" alt="" /></button>
+            <!-- <a href="#editEmployeeModal" class="edit" data-toggle="modal">
+              <img src="assets\images\edit.svg" alt="" /> -->
+            <!-- </a> -->
           </td>
         </tr> 
       </tbody>
       <tfoot>
         <tr>
-          <td colspan="10">
-            <p-paginator [rows]="5" [totalRecords]="50" ></p-paginator>
+          <td colspan="11">
+            <!-- <p-paginator class="page" [rows]="3" [totalRecords]="50" ></p-paginator> -->
+            <div class="clearfix">
+              <pagination-controls (pageChange)="p= $event"></pagination-controls>
+            </div>
           </td>
         </tr>
       </tfoot>
-    </table>
-       
+    </table>    
   </div>
 </div>

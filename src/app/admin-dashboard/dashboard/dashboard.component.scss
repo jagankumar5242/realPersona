@@ -1,9 +1,11 @@
 .body {
-    background: #d5ebef;
+  background: linear-gradient(to bottom, #ffffff 0%, #CDF6F6 50% );
+ // background: #d5ebef;
   padding-left: 80px;
   padding-right: 80px;
   padding-top: 48px;
   padding-bottom: 48px;
+  margin-top: 50px;
 }
 .lab1 {
   font-family: "Public Sans";
@@ -35,6 +37,7 @@
   width: 100%;
   height: 40px;
   padding-left: 2rem;
+  font-size: 14px;
   
   background-color:white;
   border: none;
@@ -54,10 +57,10 @@
   display: flex;
   background-color:white;
   border: 1.6px solid #DDDDDD;
-  top: 25px;
-  left: 19px;
-  size: 25px;
-  width: 350px;
+  // top: 25px;
+  // left: 19px;
+  // size: 25px;
+  // width: 350px;
   position: absolute;
   height: 48px;
   margin-top: 140px;
@@ -65,7 +68,8 @@
   border-radius: 12px;
 }
 .rp-btn{
-  border-color:#d5ebef;
+  //border-color:#d5ebef;
+  border-style: none;
   color:white;
   font-family: 'Public Sans';
   font-style: normal;
@@ -77,6 +81,8 @@
   height: 48px;
   right: 0px;
   top: 0px;
+  margin-right: -46px;
+  margin-left: 10px;
 }
 .input-left-icon{
   position: absolute;
@@ -86,12 +92,12 @@
   z-index: 999;
 }
 .table {
- 
   border-radius: 12px;
   width: 100%;
   background-color: #ffffff;
   padding: 2px;
   text-align: center;
+  vertical-align: middle;
 }
 .tableHead {
   text-align: center;
@@ -110,14 +116,22 @@
   border-bottom: solid #e5e5e5;
   vertical-align:middle;
 }
-tfoot{
-  width: auto;
-  text-align: right;
-}
-.delete{
-  padding: 20px;
-}
+// .delete{
+//   padding: 20px;
+// }
 .profile{
   border-radius: 5px;
-  
+  margin-left: 8px; 
+}
+.custom-control-input{
+  height: 18px;
+  width: 18px;
+  vertical-align: middle;
+}
+.clearfix{
+  position: relative;
+  //justify-content: left;
+  // right: 35%;
+  left: 35%;
+  font-size: 15px;
 }
