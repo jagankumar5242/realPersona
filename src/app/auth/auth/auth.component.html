@@ -8,9 +8,9 @@
         </div>
         
         <div class="row d-flex justify-content-center ">
-            <div class="col-sm-12 col-md-6">
-                <form class="form col-6"  [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
-                    <h2>Admin Login</h2><br>
+            <div class="col-sm-12 col-md-4">
+                <form class="form col-6 col-sm-12"  [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+                     <h2 class="login-text">Admin Login</h2><br>
         
                     <div class="form-group position-relative">
                         <img src="assets\images\email.svg" class="input-left-icon"> 
@@ -33,8 +33,8 @@
                             </div> 
                     </div><br>
                     <div class="form-group row d-flex justify-content-center button">
-                        <div class="col-8">
-                            <button  type="submit" class="btn rp-btn w-100" [disabled]="!loginForm.valid" >Login</button>
+                        <div class="col-12">
+                            <button  type="submit" class="btn rp-btn w-100" [disabled]="!loginForm.valid">Login</button>
                             
                         </div>
                         

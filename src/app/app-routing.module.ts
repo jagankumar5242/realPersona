@@ -9,7 +9,6 @@ import { LayoutComponent } from './header/layout/layout.component';
 const routes: Routes = [
   {path:'auth',component:AuthComponent},
   {path:'dashbord',component:DashboardComponent},
-  {path:'add-person',component:AddPersonComponent},
   {
     path:'dashboard',
     component: LayoutComponent,

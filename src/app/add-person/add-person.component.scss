@@ -1,9 +1,9 @@
-.add-container{
-    background-color:  #d5ebef;
-    height: 100vh;
-    overflow: auto;  
-    overflow-x: hidden;  
-}
+// .add-container{
+//     background-color:  #d5ebef;
+//     height: 100vh;
+//     overflow: auto;  
+//     overflow-x: hidden;  
+// }
 form {
     text-align: center;
     width: auto;
@@ -16,26 +16,22 @@ form {
        
 }
 .head{
-    position: static;
     font-family: 'Public Sans';
     font-style: normal;
-    font-size: 14px;
+    font-size: 24px;
     text-transform: capitalize;
     flex: auto;
     padding-top: 4rem;
-    padding-left: 2rem;    
 }
 .text{
     text-align:justify;
 }
 .button{
     text-align: end; 
-    padding-top: 1.5rem;
+    padding-top: 2rem;
     padding-bottom: 1rem;
 }
- .form-group{
-     padding: 5px;
- }
+  
  .input-right-icon{
     border-radius: 12px;
     position: relative;
@@ -52,9 +48,14 @@ form {
     padding: inherit;
 }
 .rp-btn{
-    width: 7rem;    
+    // width: 7rem;    
+    padding-left: 2rem;
+    padding-right: 2rem;
 } 
- 
+.formouter-div{
+    padding-left: 3rem;
+       
+}
 .upload-btn{
     font-size: 14px;
     border-radius: 12px;
@@ -62,9 +63,12 @@ form {
     background: #FFFFFF;
     padding: 0.5rem;
     position: relative;
-    padding-left: 1.5rem;
-     
+    padding-left: 1.5rem;    
 }
+.hiden-btn {
+     padding: 1rem;  
+}
+
 .cameraIcon{
     cursor: pointer;
     position: absolute;
@@ -83,19 +87,75 @@ form {
 .upload-outer-div{
     border: 1.6px dashed #56C6DC;
     border-radius: 12px;
-    padding: 1rem;
-    // height: 57vh;
-    // width:35vh;   
+    padding: 1rem;   
+    padding-bottom: 4rem;  
      
 }
+.back-div{
+    font-size: 14px;
+    font-family: 'public sans';
+}
 .back-button{
-    cursor: pointer;    
+    cursor: pointer; 
+    
 }
 .text-danger{
      text-align:left;     
 }
-.del-button{
-    text-align: left;
+.delete-btn{
+    border-radius: 12px;
+    color: #F33030;
+    border-color: #F33030;
+    padding: 4px;
+    border: 1.5px solid;
+    background-color:white;
+    padding-left: 1rem;
+    padding-right: 1rem;  
 }
+.delete-div{
+    text-align: left;
+    padding-top: 2rem;
+}
+.input-radius{
+    border-radius: 12px;
+    height: 64px;
 
+}
+.alert-success{
+   padding: 10px 16px 10px 16px;
+   text-align: center;
+   border-radius: 12px;
+   color:rgb(10, 186, 10);
+   background-color: #DEF8F4;
+   font-size: 14px;   
+}
+ 
+
+
+
+
+
+// .form-lable{
+//     position: relative;
+//     right: 7rem;
+//     bottom: 2rem;
+//     text-align: left;
+//     cursor:text;
+// }
+// .textbox:focus ~ .form-lable{
+//     top:0;
+//     bottom: 1rem;
+//     font-size:16px ;
+// }
+
+// .bi-trash{
+//     //  text-align: left;
+// }
+// .float-container {
+//     border: solid 1px #ccc;
+//   }
+//   .float-container input {
+//     border: none;
+//     outline: 0;
+//   }
  
