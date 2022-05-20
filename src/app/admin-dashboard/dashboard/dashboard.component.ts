@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from './users.service';
 import { PrimeNGConfig } from 'primeng/api';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { DialogboxComponent } from '../dialogbox/dialogbox.component';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -12,10 +16,12 @@ export class DashboardComponent implements OnInit {
   p:any;
   public users: any = [];
   showDelete = false;
-
+  modalReference: any=  NgbModalRef;
+  
   constructor(
+    private modalService: NgbModal,
     private usersService: UsersService,
-    private primengConfig: PrimeNGConfig
+    private primengConfig: PrimeNGConfig,
   ) {}
 
   ngOnInit() 
@@ -27,9 +33,7 @@ export class DashboardComponent implements OnInit {
       });
     });
     this.primengConfig.ripple = true;
-  }
-  showPopUp(){
-    alert
+   // this.modalReference = this.modalService.open(DialogboxComponent, {backdrop: 'static',size: 'lg', keyboard: false, centered: true});
   }
   taggleDelete(item: any, event: any) {
     setTimeout(() => {
@@ -60,8 +64,15 @@ export class DashboardComponent implements OnInit {
   }
   CheckAllOptions() {
     if (this.users.every((val:any) => val.isSelected == true))
-      this.users.forEach((val:any) => { val.isSelected = false });
+      this.users.forEach((val:any) => { val.isSelectedCheckAllOptions = false });
     else
-      this.users.forEach((val:any) => { val.isSelected = true });
+      this.users.forEach((val:any) => { val.isSelected = true }) ;
   }
+  open(){
+   this.modalReference = this.modalService.open(DialogboxComponent);
+  }
+  // modalReference: NgbModalRef;
+// constructor(private modalService: NgbModal) { }
+//this.modalReference = this.modalService.open(DialogboxComponent, {backdrop: 'static',size: 'lg', keyboard: false, centered: true});
+
 }

@@ -1,0 +1,41 @@
+<ng-template #content let-modal>
+  <div class="header">
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    ></button>
+  </div>
+  <div class="dialogImg">
+    <img src="assets\images\dialog.svg" />
+  </div>
+  <div class="body">
+    <h2>Delete personas?</h2>
+    <p>
+      Are you sure you want to delete the personas? All the selected persona
+      data will be permanently removed
+    </p>
+  </div>
+  <div class="footer">
+    <button
+      type="button"
+      class="bi bi-trash btn btn-danger"
+      (click)="modal.close('Save click')"
+    >
+      Delete
+    </button>
+  </div>
+  <div class="cancel">
+    <button
+      type="button"
+      class="btn btn-cancel"
+      (click)="modal.dismiss('Cancel click')"
+    >
+      Cancel
+    </button>
+  </div>
+</ng-template>
+<button class="btn btn-lg btn-outline-primary" (click)="open(content)">
+  Launch demo modal
+</button>

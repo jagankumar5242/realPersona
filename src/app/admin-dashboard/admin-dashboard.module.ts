@@ -6,9 +6,13 @@ import { PaginatorModule} from 'primeng/paginator';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxPaginationModule } from 'ngx-pagination';
 import {CheckboxModule} from 'primeng/checkbox';
+import { DialogboxComponent } from './dialogbox/dialogbox.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 @NgModule({
   declarations: [
-    DashboardComponent
+    DashboardComponent,
+    DialogboxComponent
   ],
   imports: [
     CommonModule,
@@ -16,6 +20,7 @@ import {CheckboxModule} from 'primeng/checkbox';
     AdminDashboardRoutingModule,
     HttpClientModule,
     NgxPaginationModule,
+    NgbModule,
     CheckboxModule
   ],
   providers: [
