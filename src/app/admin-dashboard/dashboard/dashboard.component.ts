@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from './users.service';
 import { PrimeNGConfig } from 'primeng/api';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -9,11 +10,10 @@ import { PrimeNGConfig } from 'primeng/api';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  router: any;
   public users: any=[];
   
   
-  constructor(private usersService:UsersService,private primengConfig: PrimeNGConfig) {
+  constructor(private usersService:UsersService,private primengConfig: PrimeNGConfig, public router: Router) {
    }
 
   ngOnInit() {
@@ -51,6 +51,6 @@ export class DashboardComponent implements OnInit {
      this.primengConfig.ripple = true;
   }
   reRoute(){
-    this.router.navigate(['/Add-person'])
+    this.router.navigate(['/dashboard/add-person'])
   }
 }

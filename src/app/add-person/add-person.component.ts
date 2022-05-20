@@ -15,6 +15,7 @@ export class AddPersonComponent implements OnInit {
    fileDetails: any;
    imageURL:any;
     
+    
   constructor(private routerref:Router, public formbuilder:FormBuilder, public addperson:AddPersonService) { }
 
   ngOnInit(): void {
@@ -28,14 +29,18 @@ export class AddPersonComponent implements OnInit {
       image:['',Validators.compose([Validators.required])],
     })
   }
+  close(){
+    this.fileDetails.reset(this.imageURL);
+  }
 
   addData(data: any){ 
     this.addperson.addData(data).subscribe(res=>{
        //console.log(res)
        this.message=true;
-       this.publishForm.reset({ })
+       //this.publishForm.reset();
+       this.routerref.navigate(['/dashbord']);
     }, err=>{
-
+       
     })
     // console.log(this.PublishForm,data)
    }
@@ -60,11 +65,15 @@ export class AddPersonComponent implements OnInit {
         this.fileDetails = event.target.files[0]
         reader.readAsDataURL(event.target.files[0]); 
         reader.onload = (_event) => { 
-            this.imageURL = reader.result; 
-        }
-       
+            this.imageURL = reader.result;  
+            this.addperson.uplodeImage(event).subscribe(res=>{
+              console.log(res)
+            },err=>{
+               
+            })
+        }  
      }
-     
+
      deletePerson(data:any){
        this.addperson.deletePerson(data).subscribe(res=>{
          console.log(res)
@@ -73,24 +82,15 @@ export class AddPersonComponent implements OnInit {
        })
       // console.log('delete');
      }
-     uplodefile(event:any){
-       this.addperson.uplodefile(event).subscribe(res=>{
-         console.log(res)
-       },err=>{
+    //  uplodeImage(data:any){
+    //    this.addperson.uplodeImage(data).subscribe(res=>{
+    //      console.log(res)
+    //    },err=>{
           
-       })
-     }
-
+    //    })
+    //  }
+     
   }
 
 
-      //  ulodeFile(event:any){
-    //    if(event.target.files){
-    //      var reader = new FileReader()
-    //      reader.readAsDataURL(event.target.files[0])
-    //      reader.onload =(event:any)=>{
-    //        this.url = event.target.results
-    //      }
-    //    }
-    //  }
-
+     

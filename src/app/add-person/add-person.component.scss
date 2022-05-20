@@ -10,9 +10,7 @@ form {
     background: #FFFFFF;
     box-shadow: 0px 8px 24px rgba(219, 237, 233, 0.8);
     border-radius: 12px; 
-    padding:1.5rem;
-    padding-bottom: 1rem; 
-    padding-right: 3rem;
+    padding: 48px 48px;
        
 }
 .head{
@@ -30,6 +28,9 @@ form {
     text-align: end; 
     padding-top: 2rem;
     padding-bottom: 1rem;
+}
+.button-div{
+    left: 25px;
 }
   
  .input-right-icon{
@@ -54,6 +55,11 @@ form {
 } 
 .formouter-div{
     padding-left: 3rem;
+    padding-right: 3rem;
+    @media only screen and (max-width: 768px) {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
        
 }
 .upload-btn{
@@ -66,7 +72,7 @@ form {
     padding-left: 1.5rem;    
 }
 .hiden-btn {
-     padding: 1rem;  
+     padding: 0.5rem;
 }
 
 .cameraIcon{
@@ -88,8 +94,13 @@ form {
     border: 1.6px dashed #56C6DC;
     border-radius: 12px;
     padding: 1rem;   
-    padding-bottom: 4rem;  
-     
+       
+}
+.upload-outer-div-2{
+    border: 1.6px dashed #56C6DC;
+    border-radius: 12px;
+    padding: 1rem;   
+    padding-bottom: 5rem;     
 }
 .back-div{
     font-size: 14px;
@@ -129,33 +140,8 @@ form {
    background-color: #DEF8F4;
    font-size: 14px;   
 }
- 
+.close-button{
+    text-align: end;
 
-
-
-
-
-// .form-lable{
-//     position: relative;
-//     right: 7rem;
-//     bottom: 2rem;
-//     text-align: left;
-//     cursor:text;
-// }
-// .textbox:focus ~ .form-lable{
-//     top:0;
-//     bottom: 1rem;
-//     font-size:16px ;
-// }
-
-// .bi-trash{
-//     //  text-align: left;
-// }
-// .float-container {
-//     border: solid 1px #ccc;
-//   }
-//   .float-container input {
-//     border: none;
-//     outline: 0;
-//   }
+}
  

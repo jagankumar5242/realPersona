@@ -14,7 +14,7 @@ export class AddPersonService {
   addData(payLoad:any):Observable<any[]>{
     return this.http.post<any[]>(this.url,payLoad)
   }
-  uplodefile(payLoad:any):Observable<any[]>{
+  uplodeImage(payLoad:any):Observable<any[]>{
     return this.http.post<any[]>(this.url2,payLoad)
   }
 
