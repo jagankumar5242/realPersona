@@ -4,7 +4,7 @@
       type="button"
       class="btn-close"
       aria-label="Close"
-      (click)="modal.dismiss('Cross click')"
+      
     ></button>
   </div>
   <div class="dialogImg">
@@ -21,7 +21,7 @@
     <button
       type="button"
       class="bi bi-trash btn btn-danger"
-      (click)="modal.close('Save click')"
+      
     >
       Delete
     </button>
@@ -30,12 +30,9 @@
     <button
       type="button"
       class="btn btn-cancel"
-      (click)="modal.dismiss('Cancel click')"
+      
     >
       Cancel
     </button>
   </div>
 </ng-template>
-<button class="btn btn-lg btn-outline-primary" (click)="open(content)">
-  Launch demo modal
-</button>

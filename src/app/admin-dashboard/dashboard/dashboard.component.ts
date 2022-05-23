@@ -32,8 +32,7 @@ export class DashboardComponent implements OnInit {
         return ele;
       });
     });
-    this.primengConfig.ripple = true;
-   // this.modalReference = this.modalService.open(DialogboxComponent, {backdrop: 'static',size: 'lg', keyboard: false, centered: true});
+    // this.primengConfig.ripple = true;
   }
   taggleDelete(item: any, event: any) {
     setTimeout(() => {
@@ -69,7 +68,10 @@ export class DashboardComponent implements OnInit {
       this.users.forEach((val:any) => { val.isSelected = true }) ;
   }
   open(){
-   this.modalReference = this.modalService.open(DialogboxComponent);
+   const ngMdelRef = this.modalService.open(DialogboxComponent);
+   ngMdelRef.result.then(res =>{
+
+   })
   }
   // modalReference: NgbModalRef;
 // constructor(private modalService: NgbModal) { }
