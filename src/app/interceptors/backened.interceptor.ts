@@ -13,7 +13,7 @@ export class backendInterceptor implements HttpInterceptor {
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>>{
         console.log('----------',req);
         
-        const url = "http://199.34.21.254";
+       // const url = "http://199.34.21.254";
         const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2NTIyNjU2NzYsImlkIjoiMjAiLCJ1c2VybmFtZSI6InNhdHlhZ3ZucyJ9.ZkSuf6EjRqSqd3sjqzAszIcEsPcWV4RWCMJWmNQ3TfU"
         let headers = new HttpHeaders();
         headers = headers.set('Authorization', token);
@@ -21,7 +21,7 @@ export class backendInterceptor implements HttpInterceptor {
         headers = headers.set('Access-Control-Allow-Headers', '*');
         //headers = headers.set('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
         req = req.clone({
-            url: url + '/' + req.url,
+          //  url: url + '/' + req.url,
             headers: headers
         })
         console.log(req);

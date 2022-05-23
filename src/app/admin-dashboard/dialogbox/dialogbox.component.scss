@@ -1,0 +1,40 @@
+.dialogImg{
+   text-align: center;
+   align-items: center;
+}
+.body{
+    text-align: center;
+    font-size: 14px;
+    padding: 20px;
+}
+.header{
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+.footer{
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.btn-danger{
+ box-sizing: 12px;
+ color: red;
+ border-color: #F33030;
+ border: 1.6px solid;
+ background: #fff;
+ padding: 10px 24px;
+ gap: 8px;
+ width: 320px;
+ height: 56px;
+}
+.cancel{
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
