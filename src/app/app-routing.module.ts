@@ -4,11 +4,14 @@ import { AddPersonComponent } from './add-person/add-person.component';
 import { DashboardComponent } from './admin-dashboard/dashboard/dashboard.component';
 import { AuthComponent } from './auth/auth/auth.component';
 import { LayoutComponent } from './header/layout/layout.component';
+import { UserListComponent } from './user-list/user-list.component';
  
 
 const routes: Routes = [
   {path:'auth',component:AuthComponent},
-  {path:'dashbord',component:DashboardComponent},
+  // {path:'dashbord',component:DashboardComponent},
+  // {path:'add-person',component:AddPersonComponent},
+  // {path:'user-list',component:UserListComponent},
   {
     path:'dashboard',
     component: LayoutComponent,

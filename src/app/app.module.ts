@@ -14,12 +14,14 @@ import { AddPersonComponent } from './add-person/add-person.component';
 import { AddPersonService } from './add-person/add-person.service';
 import { InputTextModule } from "primeng/inputtext";
 
+import { UserListComponent } from './user-list/user-list.component';
 @NgModule({
   declarations: [
     AppComponent,
     ManagementComponent,
     AuthComponent,
     AddPersonComponent,
+    UserListComponent,
   ],
   imports: [
     BrowserModule,
