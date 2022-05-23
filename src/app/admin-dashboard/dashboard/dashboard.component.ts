@@ -53,4 +53,10 @@ export class DashboardComponent implements OnInit {
   reRoute(){
     this.router.navigate(['/dashboard/add-person'])
   }
+  editPerson(){
+    this.router.navigate(
+      ['/dashboard/add-person'],
+      { queryParams: {isEdit:'true' } }
+    );
+  }
 }

@@ -1,7 +1,7 @@
 <div class="w-100">
     <div class="row head col-sm-12 col-md-8 ">
         <div class="col-8 back-div">
-            <h5><img src=assets\images\ArrowLeft.svg  (click)="back()" class="back-button"> Persona Management</h5>
+            <h5><img src=assets\images\ArrowLeft.svg  (click)="back()" class="back-button">  Persona Management</h5>
         </div>
         <div class="bi bi-check-lg alert alert-success col-4 " role="alert" *ngIf="message">
              <label for="">  persona published succesfully</label> 
@@ -10,8 +10,9 @@
     <div  class="row d-flex justify-content-center">
         <div class="form-group  formouter-div col-md-10 col-sm-12 col-lg-8">
             <form class="form " [formGroup]="publishForm">
-                <h3 class="text">Add New Persona</h3><br>
-               
+                <h6 class="text edit-text" *ngIf="isEdit">Edit Details <br> <span class="person-edit"> {{editObj.firstname}} {{editObj.lastname}}</span><br></h6>
+                <h3 class="text" *ngIf="!isEdit">Add New Persona</h3><br>
+                
              <div class="row col-12">
                 <div class="col-md-8 col-sm-12 ">
                     <div class="form-floating col-10 mb-3 ">
@@ -39,14 +40,14 @@
                         <div class="form-floating col-3 mb-3">
                             <input type="number" placeholder="Age"class="form-control input-radius" formControlName="age" maxlength="2"> 
                             <label for="age" >Age</label> 
+                            <small class="text-danger" *ngIf="publishForm['controls']['age'].touched && publishForm['controls']['age']['errors']">gender is required</small> 
                         </div>
                         <div class=" form-floating col-10 mb-3"> 
-                            <select class="form-select input-radius"  formControlName="location" placeholder="select location" id="state" required>
-                                <option value="" disabled selected>location</option>
-                                <option value="Karnataka">Karnataka</option>
-                                <option value="Andhra Pradhesh">Andhra Pradhesh</option>
-                                <option value="Thamilnadu">Thamilnadu</option>
-                                <option value="Kerala">Kerala</option>
+                            <select    class="form-select input-radius"  formControlName="location" placeholder="select location" id="state" required >
+                                <option value="" disabled selected>select</option>
+                                <option *ngFor="let state of location" [value]="state">
+                                    {{state}}
+                                </option>
                             </select>
                             <label for="location">location</label>
                             <div class="text-danger">
@@ -55,12 +56,11 @@
                         </div>
                     
                         <div class=" form-floating col-10 mb-3"> 
-                            <select class="form-select input-radius"   placeholder="occupation" formControlName="occupation" required>
-                                <option value="" disabled selected>Occupation</option>
-                                <option value="Student">Student</option>
-                                <option value="Engineer">Engineer</option>
-                                <option valu="Doctor">Doctor</option>
-                                <option value="Teacher">Teacher</option>
+                            <select    class="form-select input-radius"  formControlName="occupation" placeholder="occupation" id="occupation" required >
+                                <option value="" disabled selected>select</option>
+                                <option *ngFor="let occupation of occupation" [value]="occupation">
+                                    {{occupation}}
+                                </option>
                             </select>
                             <label for="occupation">Occupation</label>
                             <div class="text-danger">
@@ -69,7 +69,7 @@
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-12 " [ngClass]="{'upload-outer-div':!fileDetails,'upload-outer-div-2':fileDetails}">
-                        <div class="close-button" *ngIf="fileDetails">
+                        <div class="close-button " *ngIf="fileDetails">
                             <button type="close" class="btn-close" (click)="close()"></button>
                         </div>
                         <div class=" upload-div">
@@ -93,18 +93,16 @@
                 </div>
               <div class="row col-12 col-sm-12 position-relative button-div">
                   <div class="col-6 delete-div">
-                    <button class="bi bi-trash delete-btn" (click)="deletePerson('click delete')"> Delete</button>
+                    <button class="bi bi-trash delete-btn" (click)="deletePerson('click delete')" *ngIf="isEdit"> Delete</button>
                   </div>
                   <div class="button col-6"> 
                       <button type="submit" class="btn btn-link " (click)="resetForm()">cancel</button>
-                      <button  type="submit" class="btn rp-btn  mx-3" [disabled]="!publishForm.valid" (click)="addData(publishForm.value)" > Publish </button>    
+                      <button  type="submit" class="btn rp-btn  mx-3" [disabled]="!publishForm.valid || !fileDetails" (click)="addData(publishForm.value)" *ngIf="!isEdit"> Publish </button> 
+                      <button type="submit" class="btn rp-btn mx-3" *ngIf="isEdit" [disabled]="!publishForm.valid || !fileDetails" (click)="updateperson()">Save Changes</button>   
                    </div>     
               </div>
             </form>
        </div> 
     </div>
 </div>
-  
- 
- 
   

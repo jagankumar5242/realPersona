@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import {  Router } from '@angular/router';
+import {  ActivatedRoute, Router } from '@angular/router';
 import { AddPersonService } from './add-person.service';
 
 @Component({
@@ -14,11 +14,33 @@ export class AddPersonComponent implements OnInit {
    message=false;
    fileDetails: any;
    imageURL:any;
-    
-    
-  constructor(private routerref:Router, public formbuilder:FormBuilder, public addperson:AddPersonService) { }
+   editObj = {firstname: 'Jagan', lastname: 'kumar',gender:'male',age:'24',location:'Karnataka',occupation:'Farmer'};
+   isEdit = false;
+   location: string[] = ['Andhra pradesh','Karnataka','Tamil nadu','Kerala','Telangana','Maharastra'];  
+   occupation: string[] = ['Farmer','Doctor',' Engineer','student','Manger','Teacher'];  
+  
+  
+  constructor(private routerref:Router,
+     public formbuilder:FormBuilder, 
+     public addperson:AddPersonService,
+     private router:ActivatedRoute) {
+       this.router.queryParams.subscribe((res: any) =>{
+         this.loadForm();
+         if(res && res.isEdit){
+           this.isEdit = true;
+            this.publishForm.patchValue(this.editObj);
+            this.fileDetails = {};
+           this.imageURL = 'https://res.cloudinary.com/demo/image/upload/sample.gif';
+           this.publishForm.updateValueAndValidity();
+         }
+         
+       })
+      }
 
   ngOnInit(): void {
+    
+  }
+  loadForm(){
     this.publishForm=this.formbuilder.group({
       firstname:['',Validators.compose([Validators.required])],
       lastname:['',Validators.compose([Validators.required])],
@@ -26,12 +48,13 @@ export class AddPersonComponent implements OnInit {
       age:['',Validators.compose([Validators.required])],
       location:['',Validators.compose([Validators.required])],
       occupation:['',Validators.compose([Validators.required])],
-      image:['',Validators.compose([Validators.required])],
-    })
+    });
   }
   close(){
-    this.fileDetails.reset(this.imageURL);
+    this.fileDetails = undefined;
   }
+  
+
 
   addData(data: any){ 
     this.addperson.addData(data).subscribe(res=>{
@@ -77,11 +100,25 @@ export class AddPersonComponent implements OnInit {
      deletePerson(data:any){
        this.addperson.deletePerson(data).subscribe(res=>{
          console.log(res)
+         
        },err=>{
 
        })
-      // console.log('delete');
+        // console.log('delete');
      }
+       
+       updateperson(){
+        this.routerref.navigate(['/dashbord']);
+        
+        //  const data = {};
+        //  this.addperson.updatePerson(data).subscribe(res =>{
+        //    console.log(res)
+        //    this.routerref.navigate(['/dashbord']);
+        //  })
+       }
+
+}
+     
     //  uplodeImage(data:any){
     //    this.addperson.uplodeImage(data).subscribe(res=>{
     //      console.log(res)
@@ -90,7 +127,7 @@ export class AddPersonComponent implements OnInit {
     //    })
     //  }
      
-  }
+  
 
 
      
