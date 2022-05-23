@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { UsersService } from './users.service';
 import { PrimeNGConfig } from 'primeng/api';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { DialogboxComponent } from '../dialogbox/dialogbox.component';
 
 
@@ -16,7 +15,6 @@ export class DashboardComponent implements OnInit {
   p:any;
   public users: any = [];
   showDelete = false;
-  modalReference: any=  NgbModalRef;
   
   constructor(
     private modalService: NgbModal,
@@ -70,7 +68,11 @@ export class DashboardComponent implements OnInit {
   open(){
    const ngMdelRef = this.modalService.open(DialogboxComponent);
    ngMdelRef.result.then(res =>{
-
+    console.log(res);
+    
+   }, err =>{
+    console.log(err);
+    
    })
   }
   // modalReference: NgbModalRef;

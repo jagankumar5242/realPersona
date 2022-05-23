@@ -17,7 +17,7 @@
         </div>
       </div>
       <div class="col-sm-12 col-md-4 d-flex justify-content-end align-items-center " >
-        <a class="del" href="#" *ngIf="showDelete"  (click)="open()"><img src="assets\images\Trash.svg" />Delete</a>
+        <a class="del" *ngIf="showDelete"  (click)="open()"><img src="assets\images\Trash.svg" />Delete</a>
         <button class="rp-btn" routerLink="/Add-person" onclick="reRoute()">+ New Persona</button>
       </div>
     </div>

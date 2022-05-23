@@ -12,6 +12,8 @@ export class DialogboxComponent implements OnInit {
   constructor( private modalService: NgbModal) { }
 
   ngOnInit(): void {
+    console.log("coming here");
+    
   }
 
   private getDismissReason(reason: any): string {
