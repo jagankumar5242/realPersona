@@ -1,11 +1,11 @@
 
  form {
     text-align: center;
-    width: auto;
+    width:auto;
     background: #FFFFFF;
     box-shadow: 0px 8px 24px rgba(219, 237, 233, 0.8);
     border-radius: 12px; 
-    padding: 2rem;
+    padding:3rem;  
  }
 .text {
     font-family: 'Public Sans';
@@ -15,10 +15,11 @@
     line-height: 38px;
     text-align: center;
     color: #242727;
+    padding: 2rem;
 }
 
  .login-container{
-     background-color:  #d5ebef;
+     background:linear-gradient(to bottom, #ffffff 0%, #cdf3f3 100%);
      height: 100vh;
      overflow: auto;  
      overflow-x: hidden;  
@@ -32,10 +33,16 @@
    position: absolute;
     right: 1rem;
     padding-top: 5px;
-    cursor: pointer;
-   
+    cursor: pointer; 
  }
-
  .icon-input{
     padding-left: 2.5rem;
  }
+ .text-danger{
+    text-align: left;
+ }
+ .login-text{
+    font-family:'public sans';
+    font-size: 32px;
+ }
+ 

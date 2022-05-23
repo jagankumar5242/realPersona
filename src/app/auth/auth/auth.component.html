@@ -7,15 +7,15 @@
             </div>
         </div>
         
-        <div class="row d-flex justify-content-center">
-            <div class="col-sm-12 col-md-6">
-                <form class="form col-6"  [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
-                    <h2>Admin Login</h2><br>
+        <div class="row d-flex justify-content-center ">
+            <div class="col-sm-12 col-md-4">
+                <form class="form col-6 col-sm-12"  [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+                     <h2 class="login-text">Admin Login</h2><br>
         
                     <div class="form-group position-relative">
                         <img src="assets\images\email.svg" class="input-left-icon"> 
                     <input  type="email" class="form-control icon-input"  placeholder=" Email ID" formControlName="email" required /> 
-                    <div class="text-danger ">
+                    <div class="text-danger">
                         <small *ngIf="loginForm['controls']['email'].touched && loginForm['controls']['email']['errors']"> Enter valid email ID</small>
                     </div>
                     </div><br>
@@ -27,11 +27,14 @@
                         <!-- <img  src="assets\images\Eye.svg" class="input-right-icon" (click)=" tagglePassword()">    -->
                         <input   [type]="showPassword ? 'text': 'password'" 
                             class="form-control icon-input" placeholder=" Password"
-                            formControlName="password" required />    
+                            formControlName="password" required /> 
+                            <div class="text-danger">
+                                <small *ngIf="loginForm['controls']['email'].touched && loginForm['controls']['password']['errors']"> Enter password</small>    
+                            </div> 
                     </div><br>
                     <div class="form-group row d-flex justify-content-center button">
-                        <div class="col-8">
-                            <button  type="submit" class="btn rp-btn w-100" [disabled]="!loginForm.valid" >Login</button>
+                        <div class="col-12">
+                            <button  type="submit" class="btn rp-btn w-100" [disabled]="!loginForm.valid">Login</button>
                             
                         </div>
                         

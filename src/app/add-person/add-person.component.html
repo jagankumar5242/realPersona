@@ -1,54 +1,110 @@
- <div  class="add-container">
-    <div class="w-100">
-       <div class=" head col-sm-12 col-md-6 ">
-            <h1> <img src=assets\images\ArrowLeft.svg  (click)="back()"> Persona Management</h1>
-       </div>
-       <div  class="row d-flex justify-content-center">
-        <div class="form-group col-8 ">
-            <form class="form " [formGroup]="PublishForm" (ngSubmit)="addData()">
-                <h3 class="text">Add New Persona</h3>
-               <div class="col-sm-6">
-                    <div class="form-group ">
-                        <input type="text" placeholder="First Name" class="form-control">
-                    </div>
-                    <div class="form-group ">
-                        <input type="text" placeholder="Last Name" class="form-control">
-                    </div>
-                    
-                    <div class="form-group col-6">
-                        <label for="gender" id="gender">Gender</label><br>
-                        <input type="radio" value="male" name="gender">male
-                        <input type="radio" value="female" name="gender">female    
-                    </div>
-                    <div class="form-group col-4">
-                        <input type="numbers" placeholder="Age"class="form-control">
-                    </div>
-                    <div class="form-group "> 
-                        <select class="form-control" id="locationFormControlSelect1">
-                        <option>Location</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                        </select>
-                    </div>
-                    <div class="form-group "> 
-                        <select class="form-control" id="acupationFormControlSelect1" aria-placeholder="acupation">
-                        <option>Occupation</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                        </select>
-                    </div>
-               </div>
-               <div class="button">
-                   <label for="" class="cnl">cancel</label>
-                   <button  type="submit" class="btn rp-btn " > Publish</button>
-                </div>
-            </form>
-       </div> 
+ <div class="w-100">
+    <div class="row head col-sm-12 col-md-8 ">
+        <div class="col-8 back-div">
+            <h5><img src=assets\images\ArrowLeft.svg  (click)="back()" class="back-button"> Persona Management</h5>
+        </div>
+        <div class="bi bi-check-lg alert alert-success col-4 " role="alert" *ngIf="message">
+             <label for="">  persona published succesfully</label> 
+          </div>
        </div>
       
-      </div>
+
+       <div  class="row d-flex justify-content-center">
+        <div class="form-group  formouter-div col-8">
+            <form class="form " [formGroup]="publishForm" (ngSubmit)="addData(publishForm.value)">
+                <h3 class="text">Add New Persona</h3><br>
+               
+               <div class="row col-12">
+                    <div class="col-md-8 col-sm-12 ">
+                        <div class="form-floating col-10 mb-3 ">
+                            <input type="text" placeholder="Firstname" class="form-control  input-radius" formControlName="firstname" required>
+                            <label for="firstname">Firstname</label>
+                           <div class="text-danger">
+                            <small  *ngIf="publishForm['controls']['firstname'].touched && publishForm['controls']['firstname']['errors']">firstname is required</small> 
+                           </div>  
+                        </div>
+
+                        <div class="form-floating col-10 mb-3">
+                            <input type="text" placeholder="Last Name" class="form-control input-radius" formControlName="lastname" required>
+                            <label for="Lastname">Lastname</label>
+                           <div  class="text-danger">
+                            <small *ngIf="publishForm['controls']['lastname'].touched && publishForm['controls']['lastname']['errors']">lastname is required</small>   
+                           </div>
+                        </div>
+                    
+                        <div class="form-group gender col-10 mb-3">
+                        <label for="gender" id="gender" >Gender</label><br>
+                            <input type="radio" value="male" name="gender" formControlName="gender"  > male  
+                            <input type="radio" value="female" name="gender" formControlName="gender" > female 
+                            <small class="text-danger" *ngIf="publishForm['controls']['gender'].touched && publishForm['controls']['gender']['errors']">gender is required</small>      
+                        </div>
+
+                        <div class="form-floating col-3 mb-3">
+                            <input type="number" placeholder="Age"class="form-control input-radius" formControlName="age" maxlength="2"> 
+                            <label for="age" >Age</label> 
+                        </div>
+
+                        <div class=" form-floating col-10 mb-3"> 
+                            <select class="form-select input-radius"  formControlName="location" placeholder="select location" id="state" required>
+                                <option value="" disabled selected>location</option>
+                                <option value="Karnataka">Karnataka</option>
+                                <option value="Andhra Pradhesh">Andhra Pradhesh</option>
+                                <option value="Thamilnadu">Thamilnadu</option>
+                                <option value="Kerala">Kerala</option>
+                            </select>
+                            <label for="location">location</label>
+                            <div class="text-danger">
+                                <small  *ngIf="publishForm['controls']['location'].touched && publishForm['controls']['location']['errors']">location is required</small>   
+                            </div>
+                        </div>
+                    
+                        <div class=" form-floating col-10 mb-3"> 
+                            <select class="form-select input-radius"   placeholder="occupation" formControlName="occupation" required>
+                                <option value="" disabled selected>Occupation</option>
+                                <option value="Student">Student</option>
+                                <option value="Engineer">Engineer</option>
+                                <option valu="Doctor">Doctor</option>
+                                <option value="Teacher">Teacher</option>
+                            </select>
+                            <label for="occupation">Occupation</label>
+                            <div class="text-danger">
+                                <small  *ngIf="publishForm['controls']['occupation'].touched && publishForm['controls']['occupation']['errors']">occupation required</small>   
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12 upload-outer-div">
+                        <div class=" upload-div">
+                            <img class="w-100 h-100"*ngIf="imageURL && fileDetails" [src]="imageURL">
+                            <ng-container *ngIf="!fileDetails">
+                                <input required class="d-none "type="file" (change)=" uplodeFile($event)" accept="image/*" #file formControlName="image" >   
+                                <button class="upload-btn" (click)="file.click()">
+                                    Upload
+                                    <i class="bi bi-camera cameraIcon" type="file" ></i>
+                                </button>  
+                            </ng-container> 
+                        </div>
+                        <div class="hiden-btn">
+                            <button class="upload-btn" (click)="uplodefile($event)">
+                                Upload
+                                <i class="bi bi-camera cameraIcon" type="file" ></i>
+                            </button>  
+                        </div>  
+                    </div>
+                </div>
+              <div class="row col-12 col-sm-12">
+                  <div class="col-6 delete-div">
+                    <button class="bi bi-trash delete-btn" (click)="deletePerson('')"> Delete</button>
+                  </div>
+               <div class="button col-6"> 
+                    <button type="submit" class="btn btn-link " (click)="resetForm()">cancel</button>
+                    <button  type="submit" class="btn rp-btn  mx-3" [disabled]="!publishForm.valid" > Publish </button>    
+                </div>     
+              </div>
+            </form>
+       </div> 
     </div>
+</div>
+  
+ 
+ 
+  
