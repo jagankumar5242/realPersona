@@ -41,7 +41,7 @@ export class AddPersonComponent implements OnInit {
    }
     
     back(): void {
-      this.routerref.navigate(['/dashbord']);
+      this.routerref.navigate(['/dashboard']);
    }
 
    resetForm(){

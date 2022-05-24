@@ -1,11 +1,13 @@
 .body {
   background: linear-gradient(to bottom, #ffffff 0%, #CDF6F6 50% );
  // background: #d5ebef;
-  padding-left: 80px;
-  padding-right: 80px;
-  padding-top: 48px;
-  padding-bottom: 48px;
-  margin-top: 50px;
+  // padding-left: 50px;
+  // padding-right: 80px;
+    padding-top: 48px;
+  //  padding-bottom: 48px;
+  //margin-top: 50px;
+  margin-left: 50px;
+  margin-right: 60px;
 }
 
 .lab1 {
@@ -52,7 +54,7 @@
   color: #242727;
   padding-right: 20px;
   font-weight: 500;
-  
+  cursor: pointer;
 }
 .search-bar{
   display: flex;
@@ -99,6 +101,9 @@
   padding: 2px;
   text-align: center;
   vertical-align: middle;
+  padding-left: 80px;
+  padding-right: 80px;
+  padding-top: 48px;
 }
 .tableHead {
   text-align: center;
@@ -127,12 +132,9 @@
 .custom-control-input{
   height: 18px;
   width: 18px;
-  vertical-align: middle;
+  vertical-align: middle; 
 }
-// .clearfix{
-//   // position: relative;
-//   // //justify-content: left;
-//   // // right: 35%;
-//   // left: 35%;
-//   // font-size: 15px;
-// }
+.form-check-input :checked
+{
+  background-color: aquamarine;
+}

@@ -1,19 +1,28 @@
-import { Component, OnInit } from '@angular/core';
-import { ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import { Component, OnInit, Input } from '@angular/core';
+import { ModalDismissReasons, NgbActiveModal, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-dialogbox',
   templateUrl: './dialogbox.component.html',
   styleUrls: ['./dialogbox.component.scss']
 })
+
 export class DialogboxComponent implements OnInit {
-
+  fromParent :any;
+  isDelete :any ;
+  // public users: any = [];
   closeResult = '';
-  constructor( private modalService: NgbModal) { }
+  names = [];
+  constructor( public ngbModal: NgbActiveModal) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    console.log(this.fromParent);
+    const getNames = this.fromParent.map((ele: any) =>{
+      return ele.firstname + ' ' + ele.lastname;
+    });
+    console.log(getNames);
+    this.names = getNames;
   }
-
   private getDismissReason(reason: any): string {
     if (reason === ModalDismissReasons.ESC) {
       return 'by pressing ESC';

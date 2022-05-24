@@ -1,4 +1,4 @@
-<div onload="getUsers()">
+<div onload="getUsers()" class="body">
   <div class="row">
     <div class="col-12">
       <label class="lab1">Persona Management</label>
@@ -17,8 +17,8 @@
         </div>
       </div>
       <div class="col-sm-12 col-md-4 d-flex justify-content-end align-items-center " >
-        <a class="del" href="#" *ngIf="showDelete"  (click)="open()"><img src="assets\images\Trash.svg" />Delete</a>
-        <button class="rp-btn" routerLink="/Add-person" onclick="reRoute()">+ New Persona</button>
+        <a class="del" *ngIf="showDelete"  (click)="openDialog()" ><img src="assets\images\Trash.svg" />Delete</a>
+        <button class="rp-btn" routerLink="/dashboard/add-person" onclick="reRoute()">+ New Persona</button>
       </div>
     </div>
   </div>
@@ -28,7 +28,7 @@
         <tr class="tableHead">
           <th>
             <span class="custom-checkbox">
-              <input type="checkbox" class="custom-control-input" id="checkbox-2" (click)="CheckAllOptions()" />
+              <input type="checkbox" class="custom-control-input" [(ngModel)]="isCheckAll" (click)="CheckAllOptions()" />
               <!-- <p-checkbox (click)="CheckAllOptions()"  [binary]="true"></p-checkbox> -->
               <img src="assets\images\empty-image.svg">
             </span>
@@ -74,7 +74,7 @@
             <img src="assets\images\Trash.svg" alt="" />
             </a> -->
             <button class="btn btn-deafult" (click)="deletePerson(item)"><img src="assets\images\Trash.svg" alt="" /></button>
-            <button class="btn btn-deafult" (click)="editPerson(item)" routerLink="/Add-person"><img src="assets\images\edit.svg" alt="" /></button>
+            <button class="btn btn-deafult" (click)="editPerson(item)" routerLink="/dashboard/add-person"><img src="assets\images\edit.svg" alt="" /></button>
             <!-- <a href="#editEmployeeModal" class="edit" data-toggle="modal">
               <img src="assets\images\edit.svg" alt="" /> -->
             <!-- </a> -->
