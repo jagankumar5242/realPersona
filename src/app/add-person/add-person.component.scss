@@ -52,6 +52,8 @@ form {
     // width: 7rem;    
     padding-left: 2rem;
     padding-right: 2rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
 } 
 .formouter-div{
     padding-left: 3rem;
@@ -134,11 +136,12 @@ form {
 
 }
 .alert-success{
+   font-family: 'Public Sans';
    padding: 10px 16px 10px 16px;
    text-align: center;
    border-radius: 12px;
    color:rgb(10, 186, 10);
-   background-color: #DEF8F4;
+   background-color: #DEF8F4 ;
    font-size: 14px;   
 }
 .close-button{
@@ -158,4 +161,32 @@ form {
 .edit-text{
     font-size: 14px;
 }
- 
+//popup 
+.modal.show{
+    display: block;
+}
+.footer{
+    text-align: end;
+}
+.header{
+    text-align: end;
+    padding-right: 1rem;
+    padding-top: 1rem;
+}
+.modal-content{
+    height:auto;
+    width: 500px;
+    background-color: white;
+    text-align: center;
+}
+.modal-dialog{
+    padding-top:6rem
+}
+.fade{
+    top: 0px;
+    right: 0px;
+    width: 100%;
+    background-color: rgba( 0,0,0,0.7);
+    align-items: center;
+    justify-items: center;
+}

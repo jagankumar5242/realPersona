@@ -3,7 +3,7 @@
         <div class="col-8 back-div">
             <h5><img src=assets\images\ArrowLeft.svg  (click)="back()" class="back-button">  Persona Management</h5>
         </div>
-        <div class="bi bi-check-lg alert alert-success col-4 " role="alert" *ngIf="message">
+        <div  class="bi bi-check-lg alert alert-success col-4 " role="alert" *ngIf="message">
              <label for="">  persona published succesfully</label> 
         </div>
     </div>
@@ -31,9 +31,9 @@
                          </div>
                      </div>
                     
-                     <div class="form-group gender col-10 mb-3">
+                     <div class="form-group gender col-10 mb-3 ">
                         <label for="gender" id="gender" >Gender</label><br>
-                            <input type="radio" value="male" name="gender" formControlName="gender"  > male  
+                            <input type="radio" value="male" name="gender" formControlName="gender" > male  
                             <input type="radio" value="female" name="gender" formControlName="gender" > female 
                             <small class="text-danger" *ngIf="publishForm['controls']['gender'].touched && publishForm['controls']['gender']['errors']">gender is required</small>      
                      </div>
@@ -75,7 +75,7 @@
                         <div class=" upload-div">
                             <img class="w-100 h-100"*ngIf="imageURL && fileDetails" [src]="imageURL">
                             <ng-container *ngIf="!fileDetails ">
-                                <input required class="d-none "type="file" (change)=" uplodeFile($event)" accept="image/*" #file formControlName="image" >   
+                                <input   class="d-none "type="file" (change)=" uplodeFile($event)" accept="image/*" #file required>   
                                 <button class="upload-btn" (click)="file.click()" >
                                     Upload
                                     <i class="bi bi-camera cameraIcon" type="file" ></i>
@@ -83,7 +83,7 @@
                             </ng-container> 
                         </div>
                         <div class="hiden-btn" *ngIf="fileDetails" >
-                            <input required class="d-none "type="file" (change)=" uplodeFile($event)" accept="image/*" #file formControlName="image" >   
+                            <input  class="d-none "type="file" (change)=" uplodeFile($event)" accept="image/*" #file  required>   
                             <button class="upload-btn" (click)="file.click()">
                                 Upload
                                 <i class="bi bi-camera cameraIcon" type="file" ></i>
@@ -93,7 +93,7 @@
                 </div>
               <div class="row col-12 col-sm-12 position-relative button-div">
                   <div class="col-6 delete-div">
-                    <button class="bi bi-trash delete-btn" (click)="deletePerson('click delete')" *ngIf="isEdit"> Delete</button>
+                    <button class="bi bi-trash delete-btn"  *ngIf="isEdit" data-toggle="modal" data-target="#exampleModal" (click)="showmodel=true"> Delete</button>
                   </div>
                   <div class="button col-6"> 
                       <button type="submit" class="btn btn-link " (click)="resetForm()">cancel</button>
@@ -105,4 +105,27 @@
        </div> 
     </div>
 </div>
-  
+   
+
+ 
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" [ngClass]="{'show':showmodel}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="header">
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close" (click)="showmodel=false">
+        </button>    
+      </div>
+      <div class="modal-body">
+          <img src="assets\images\dialog.svg"alt="">
+        <h3>Delete Persona ? <br><span class="person-edit"> {{editObj.firstname}} {{editObj.lastname}}</span><br> </h3>
+       <p>Are you sure you want to delete the persona? The selected persona data will be permanently removed</p>
+      </div>
+      <div class="col-12 delete-div-pop ">
+        <button class="bi bi-trash delete-btn col-6"   (click)="deletePerson()"> Delete</button>
+      </div>
+      <div class="col-12">
+        <button type="submit" class="btn btn-link col-6" (click)="showmodel=false">cancel</button>
+      </div>
+    </div>
+  </div>
+</div>

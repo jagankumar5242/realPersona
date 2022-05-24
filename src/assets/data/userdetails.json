@@ -1,0 +1,75 @@
+{
+    "data": [
+        {
+            "create_time": "2022-02-27 04:48:29",
+            "firstname": "Satya",
+            "id": "20",
+            "lastname": "Murthy",
+            "update_time": "2022-02-27 04:48:29",
+            "username": "satyagvns",
+            "age": 25,
+            "uploaded_by":"charan",
+            "gender": "male", 
+            "location": "Bengaluru",
+            "occupation": "Software Engineer",
+            "no_of_downloads":23400
+        },
+        {
+            "create_time": "2022-02-27 04:48:38",
+            "firstname": "Satya",
+            "id": "22",
+            "lastname": "U",
+            "update_time": "2022-02-27 04:48:38",
+            "username": "admin",
+            "age": 25,
+            "uploaded_by":"charan",
+            "gender": "male", 
+            "location": "Bengaluru",
+            "occupation": "Software Engineer",
+            "no_of_downloads":23578
+        },
+        {
+            "create_time": "2022-02-27 04:55:18",
+            "firstname": "Anil Reddy",
+            "id": "24",
+            "lastname": "LLP",
+            "update_time": "2022-02-27 04:55:18",
+            "username": "anilreddy",
+            "age": 25,
+            "uploaded_by":"charan",
+            "gender": "male", 
+            "location": "Bengaluru",
+            "occupation": "Software Engineer",
+            "no_of_downloads":23678
+        },
+        {
+            "create_time": "2022-02-27 04:55:52",
+            "firstname": "Kriti",
+            "id": "25",
+            "lastname": "T",
+            "update_time": "2022-02-27 04:55:52",
+            "username": "kriti",
+            "age": 25,
+            "uploaded_by":"charan",
+            "gender": "male", 
+            "location": "Bengaluru",
+            "occupation": "Software Engineer",
+            "no_of_downloads":24888
+        },
+        {
+            "create_time": "2022-03-04 06:05:43",
+            "firstname": "John",
+            "id": "26",
+            "lastname": "Deo",
+            "update_time": "2022-03-04 06:05:43",
+            "username": "john",
+            "age": 25,
+            "uploaded_by":"charan",
+            "gender": "male", 
+            "location": "Bengaluru",
+            "occupation": "Software Engineer",
+            "no_of_downloads":25728
+        }
+    ],
+    "status": "Success"
+}
