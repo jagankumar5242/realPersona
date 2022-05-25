@@ -1,0 +1,15 @@
+<div class="">
+    <div class="grid" >
+        <!-- [ngClass]="{'smallCard' : user.cardClass == 'smallCard', 
+                    'midCard' : user.cardClass == 'midCard',
+                    'highCard' : user.cardClass == 'highCard'}" -->
+        <div *ngFor="let user of userList" class="userCard position-relative"
+        [ngClass]="{'smallCard' : user.cardClass == 'smallCard', 
+                    'midCard' : user.cardClass == 'midCard',
+                    'highCard' : user.cardClass == 'highCard'}"
+        >
+            <label class="position-absolute">{{user.name}}</label>
+        </div>
+        
+    </div>
+</div>

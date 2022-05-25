@@ -1,8 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { UsersService } from './users.service';
 import { PrimeNGConfig } from 'primeng/api';
+import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { DialogboxComponent } from '../dialogbox/dialogbox.component';
 
 @Component({
@@ -11,17 +11,17 @@ import { DialogboxComponent } from '../dialogbox/dialogbox.component';
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
-  router: any;
   p: any;
   public users: any = [];
   showDelete = false;
-  modalReference: any = NgbModalRef;
+  modalReference: any = NgbModal;
   isCheckAll = false;
 
   constructor(
     private modalService: NgbModal,
     private usersService: UsersService,
-    private primengConfig: PrimeNGConfig
+    private primengConfig: PrimeNGConfig,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -33,7 +33,15 @@ export class DashboardComponent implements OnInit {
     });
     // this.primengConfig.ripple = true;
   }
-
+  reRoute(){
+    this.router.navigate(['/dashboard/add-person'])
+  }
+  editPerson(){
+    this.router.navigate(
+      ['/dashboard/add-person'],
+      { queryParams: {isEdit:'true' } }
+    );
+  }
   taggleDelete(item: any, event: any) {
     setTimeout(() => {
       const getSelected = this.users.find(
@@ -48,9 +56,9 @@ export class DashboardComponent implements OnInit {
     }, 100);
   }
 
-  reRoute() {
-    this.router.navigate(['/add-person']);
-  }
+  // reRoute() {
+  //   this.router.navigate(['/add-person']);
+  // }
 
   deletePerson(item: any) {
     this.openDialog();
@@ -60,9 +68,9 @@ export class DashboardComponent implements OnInit {
     );
   }
 
-  editPerson(item: any) {
-    this.router.navigate(['/Add-person']);
-  }
+  // editPerson(item: any) {
+  //   this.router.navigate(['/Add-person']);
+  // }
 
   CheckAllOptions() {
     setTimeout(() => {
@@ -83,6 +91,7 @@ export class DashboardComponent implements OnInit {
     );
     ngMdelRef.result.then((res) => {
       console.log(res);
+      
       // / this.users.forEach((element : any) => {
       //   if(element.isSelected == true){
       //     this.showDelete = true;

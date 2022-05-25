@@ -14,9 +14,9 @@
     </p>
   </div>
   <div class="footer">
-    <button type="button" class="bi bi-trash btn btn-danger"  (click)="ngbModal.close('ok')">Delete</button>
+    <button type="button" class="bi bi-trash btn btn-danger"  (click)="ngbModal.close({success:true})">Delete</button>
   </div>
   <div class="cancel">
-    <button type="button" class="btn-deafult" (click)="ngbModal.close('cancel')">Cancel</button>
+    <button type="button" class="btn-deafult" (click)="ngbModal.close({success:false})">Cancel</button>
   </div>
 </div>
