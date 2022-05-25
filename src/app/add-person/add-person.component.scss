@@ -10,9 +10,7 @@ form {
     background: #FFFFFF;
     box-shadow: 0px 8px 24px rgba(219, 237, 233, 0.8);
     border-radius: 12px; 
-    padding:1.5rem;
-    padding-bottom: 1rem; 
-    padding-right: 3rem;
+    padding: 48px 48px;
        
 }
 .head{
@@ -30,6 +28,9 @@ form {
     text-align: end; 
     padding-top: 2rem;
     padding-bottom: 1rem;
+}
+.button-div{
+    left: 25px;
 }
   
  .input-right-icon{
@@ -51,9 +52,16 @@ form {
     // width: 7rem;    
     padding-left: 2rem;
     padding-right: 2rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
 } 
 .formouter-div{
     padding-left: 3rem;
+    padding-right: 3rem;
+    @media only screen and (max-width: 768px) {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
        
 }
 .upload-btn{
@@ -66,7 +74,7 @@ form {
     padding-left: 1.5rem;    
 }
 .hiden-btn {
-     padding: 1rem;  
+     padding: 0.5rem;
 }
 
 .cameraIcon{
@@ -87,9 +95,15 @@ form {
 .upload-outer-div{
     border: 1.6px dashed #56C6DC;
     border-radius: 12px;
+    padding: 1rem; 
+         
+}
+.upload-outer-div-2{
+    border: 1.6px dashed #56C6DC;
+    border-radius: 12px;
     padding: 1rem;   
     padding-bottom: 4rem;  
-     
+    position: relative;   
 }
 .back-div{
     font-size: 14px;
@@ -122,40 +136,57 @@ form {
 
 }
 .alert-success{
+   font-family: 'Public Sans';
    padding: 10px 16px 10px 16px;
    text-align: center;
    border-radius: 12px;
    color:rgb(10, 186, 10);
-   background-color: #DEF8F4;
+   background-color: #DEF8F4 ;
    font-size: 14px;   
 }
- 
-
-
-
-
-
-// .form-lable{
-//     position: relative;
-//     right: 7rem;
-//     bottom: 2rem;
-//     text-align: left;
-//     cursor:text;
-// }
-// .textbox:focus ~ .form-lable{
-//     top:0;
-//     bottom: 1rem;
-//     font-size:16px ;
-// }
-
-// .bi-trash{
-//     //  text-align: left;
-// }
-// .float-container {
-//     border: solid 1px #ccc;
-//   }
-//   .float-container input {
-//     border: none;
-//     outline: 0;
-//   }
- 
+.close-button{
+      
+    // position: absolute;
+    // right: 15px;
+    
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    border-radius: 12px;
+    border: 1px solid #d7c5c5;
+}
+.person-edit{
+     font-size: 24px;
+}
+.edit-text{
+    font-size: 14px;
+}
+//popup 
+.modal.show{
+    display: block;
+}
+.footer{
+    text-align: end;
+}
+.header{
+    text-align: end;
+    padding-right: 1rem;
+    padding-top: 1rem;
+}
+.modal-content{
+    height:auto;
+    width: 500px;
+    background-color: white;
+    text-align: center;
+}
+.modal-dialog{
+    padding-top:6rem
+}
+.fade{
+    top: 0px;
+    right: 0px;
+    width: 100%;
+    background-color: rgba( 0,0,0,0.7);
+    align-items: center;
+    justify-items: center;
+}

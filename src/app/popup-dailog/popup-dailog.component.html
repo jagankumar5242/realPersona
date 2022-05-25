@@ -1,0 +1,21 @@
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" [ngClass]="{'show':showmodel}">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="header">
+          <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close" (click)="showmodel=false">
+          </button>    
+        </div>
+        <div class="modal-body">
+            <img src="assets\images\dialog.svg"alt="">
+          <h3>Delete Persona ?  </h3>
+         <p>Are you sure you want to delete the persona? The selected persona data will be permanently removed</p>
+        </div>
+        <div class="col-12 delete-div-pop ">
+          <button class="bi bi-trash delete-btn col-6"   (click)="deletePerson()"> Delete</button>
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-link col-6" (click)="showmodel=false">cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>

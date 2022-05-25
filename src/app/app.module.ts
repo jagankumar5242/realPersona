@@ -13,8 +13,8 @@ import { AuthService } from './auth/auth/auth.service';
 import { AddPersonComponent } from './add-person/add-person.component';
 import { AddPersonService } from './add-person/add-person.service';
 import { InputTextModule } from "primeng/inputtext";
-
 import { UserListComponent } from './user-list/user-list.component';
+import { PopupDailogComponent } from './popup-dailog/popup-dailog.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +22,7 @@ import { UserListComponent } from './user-list/user-list.component';
     AuthComponent,
     AddPersonComponent,
     UserListComponent,
+    PopupDailogComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,7 +31,8 @@ import { UserListComponent } from './user-list/user-list.component';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    InputTextModule
+    InputTextModule,
+ 
     
   ],
   providers: [

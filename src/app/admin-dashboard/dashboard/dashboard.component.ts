@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from './users.service';
 import { PrimeNGConfig } from 'primeng/api';
+import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { DialogboxComponent } from '../dialogbox/dialogbox.component';
 
@@ -11,7 +12,6 @@ import { DialogboxComponent } from '../dialogbox/dialogbox.component';
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
-  router: any;
   p:any;
   public users: any = [];
   showDelete = false;
@@ -20,6 +20,7 @@ export class DashboardComponent implements OnInit {
     private modalService: NgbModal,
     private usersService: UsersService,
     private primengConfig: PrimeNGConfig,
+    private router: Router
   ) {}
 
   ngOnInit() 
@@ -31,6 +32,15 @@ export class DashboardComponent implements OnInit {
       });
     });
     // this.primengConfig.ripple = true;
+  }
+  reRoute(){
+    this.router.navigate(['/dashboard/add-person'])
+  }
+  editPerson(){
+    this.router.navigate(
+      ['/dashboard/add-person'],
+      { queryParams: {isEdit:'true' } }
+    );
   }
   taggleDelete(item: any, event: any) {
     setTimeout(() => {
@@ -45,9 +55,7 @@ export class DashboardComponent implements OnInit {
       // });
     }, 100);
   }
-  reRoute() {
-    this.router.navigate(['/Add-person']);
-  }
+  
   deletePerson(item: any) {
     this.usersService.deletePerson(item).subscribe(
       ()=>console.log(`employ is deleted`),(err)=> console.log(`user not deleted`)
@@ -56,9 +64,7 @@ export class DashboardComponent implements OnInit {
     //   alert('Persona Deleted');
     // });
   }
-  editPerson(item: any) {
-    this.router.navigate(['/Add-person']);
-  }
+  
   CheckAllOptions() {
     if (this.users.every((val:any) => val.isSelected == true))
       this.users.forEach((val:any) => { val.isSelectedCheckAllOptions = false });
@@ -67,10 +73,10 @@ export class DashboardComponent implements OnInit {
   }
   open(){
    const ngMdelRef = this.modalService.open(DialogboxComponent);
-   ngMdelRef.result.then(res =>{
+   ngMdelRef.result.then((res: any) =>{
     console.log(res);
     
-   }, err =>{
+   }, (err: any) =>{
     console.log(err);
     
    })
