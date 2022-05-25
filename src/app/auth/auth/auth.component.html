@@ -29,19 +29,16 @@
                             class="form-control icon-input" placeholder=" Password"
                             formControlName="password" required /> 
                             <div class="text-danger">
-                                <small *ngIf="loginForm['controls']['email'].touched && loginForm['controls']['password']['errors']"> Enter password</small>    
+                                <small *ngIf="loginForm['controls']['password'].touched && loginForm['controls']['password']['errors']"> Enter password</small>    
                             </div> 
                     </div><br>
                     <div class="form-group row d-flex justify-content-center button">
                         <div class="col-12">
                             <button  type="submit" class="btn rp-btn w-100" [disabled]="!loginForm.valid" routerLink="/dashboard">Login</button>
-                            
-                        </div>
-                        
+                        </div> 
                     </div>
                 </form>
-            </div>
-           
+            </div> 
         </div>
     </div>
     

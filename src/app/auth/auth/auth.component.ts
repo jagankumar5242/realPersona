@@ -38,8 +38,8 @@ export class AuthComponent implements OnInit {
     login(data: any){
       
       this.auth.login(data).subscribe(res =>{
-        // console.log(res);
-        this.routerref.navigate(["dashbord"])
+        console.log(res);
+       // this.routerref.navigate(["dashbord"])
         
       }, err =>{
           this.msg='user not found';
