@@ -28,7 +28,7 @@
         <tr class="tableHead">
           <th>
             <span class="custom-checkbox">
-              <input type="checkbox" class="custom-control-input" [(ngModel)]="isCheckAll" (click)="CheckAllOptions()" />
+              <input type="checkbox" class="form-check-input" [(ngModel)]="isCheckAll" (click)="CheckAllOptions()" />
               <!-- <p-checkbox (click)="CheckAllOptions()"  [binary]="true"></p-checkbox> -->
               <img src="assets\images\empty-image.svg">
             </span>
@@ -54,7 +54,7 @@
               <input
                 type="checkbox"
                 id="checkbox"
-                class="custom-control-input"
+                class="form-check-input"
                 [(ngModel)]="item.isSelected" [value]="item.value"
                  (click)=" taggleDelete(item, $event)"/>
               <img src="assets\images\tukaram.svg" class="profile">
@@ -75,7 +75,7 @@
             </a> -->
             <button class="btn btn-deafult" (click)="deletePerson(item)"><img src="assets\images\Trash.svg" alt="" /></button>
             <button class="btn btn-deafult" (click)="editPerson(item)" routerLink="/dashboard/add-person"><img src="assets\images\edit.svg" alt="" /></button>
-            <!-- <a href="#editEmployeeModal" class="edit" data-toggle="modal">
+            <!-- <a class="edit" data-toggle="modal">
               <img src="assets\images\edit.svg" alt="" /> -->
             <!-- </a> -->
           </td>
@@ -84,7 +84,7 @@
       <tfoot>
         <tr>
           <td colspan="11">
-            <!-- <p-paginator class="page" [rows]="3" [totalRecords]="50" ></p-paginator> -->
+            <!-- <p-paginator class="page"   [rows]="3" [totalRecords]="50" ></p-paginator> -->
             <div class="clearfix">
               <pagination-controls (pageChange)="p= $event"></pagination-controls>
             </div>
@@ -94,4 +94,3 @@
     </table>    
   </div>
 </div>
-<!-- <app-dialogbox></app-dialogbox> -->

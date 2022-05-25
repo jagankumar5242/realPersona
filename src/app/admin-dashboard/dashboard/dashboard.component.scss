@@ -129,12 +129,13 @@
   border-radius: 5px;
   margin-left: 8px; 
 }
-.custom-control-input{
+.form-check-input{
   height: 18px;
   width: 18px;
   vertical-align: middle; 
+  border: 1.6px solid #DBE8E8;
 }
-.form-check-input :checked
-{
-  background-color: aquamarine;
-}
+btn:focus {
+  outline: none;
+  box-shadow: none;
+  }   

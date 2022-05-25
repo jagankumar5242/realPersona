@@ -9,9 +9,6 @@ import { ModalDismissReasons, NgbActiveModal, NgbModal} from '@ng-bootstrap/ng-b
 
 export class DialogboxComponent implements OnInit {
   fromParent :any;
-  isDelete :any ;
-  // public users: any = [];
-  closeResult = '';
   names = [];
   constructor( public ngbModal: NgbActiveModal) { }
 
@@ -23,13 +20,13 @@ export class DialogboxComponent implements OnInit {
     console.log(getNames);
     this.names = getNames;
   }
-  private getDismissReason(reason: any): string {
-    if (reason === ModalDismissReasons.ESC) {
-      return 'by pressing ESC';
-    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-      return 'by clicking on a backdrop';
-    } else {
-      return `with: ${reason}`;
-    }
-  }
+  // private getDismissReason(reason: any): string {
+  //   if (reason === ModalDismissReasons.ESC) {
+  //     return 'by pressing ESC';
+  //   } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+  //     return 'by clicking on a backdrop';
+  //   } else {
+  //     return `with: ${reason}`;
+  //   }
+  // }
 }

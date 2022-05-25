@@ -17,6 +17,7 @@ export class DashboardComponent implements OnInit {
   showDelete = false;
   modalReference: any = NgbModalRef;
   isCheckAll = false;
+
   constructor(
     private modalService: NgbModal,
     private usersService: UsersService,
@@ -32,6 +33,7 @@ export class DashboardComponent implements OnInit {
     });
     // this.primengConfig.ripple = true;
   }
+
   taggleDelete(item: any, event: any) {
     setTimeout(() => {
       const getSelected = this.users.find(
@@ -45,24 +47,30 @@ export class DashboardComponent implements OnInit {
       // });
     }, 100);
   }
+
   reRoute() {
     this.router.navigate(['/add-person']);
   }
+
   deletePerson(item: any) {
+    this.openDialog();
     this.usersService.deletePerson(item).subscribe(
       () => console.log(`user is deleted`),
       (err) => console.log(`user not deleted`)
     );
   }
+
   editPerson(item: any) {
     this.router.navigate(['/Add-person']);
   }
+
   CheckAllOptions() {
     setTimeout(() => {
       this.users.map((ele: any) => (ele.isSelected = this.isCheckAll));
       this.taggleDelete('i', 'u');
     }, 100);
   }
+  
   openDialog() {
     const ngMdelRef = this.modalService.open(DialogboxComponent, {
       ariaLabelledBy: 'modal-basic-title',
