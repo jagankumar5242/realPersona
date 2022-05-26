@@ -13,5 +13,8 @@ export class AuthService {
     // const URL = "persona/login";
     return this.http.post<any[]>(this.url, payLoad);
   }
+  isloggedin(){
+    return localStorage.getItem('token')!=null;
+  }
 }
   

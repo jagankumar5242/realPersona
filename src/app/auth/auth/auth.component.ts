@@ -19,8 +19,8 @@ export class AuthComponent implements OnInit {
   // }); 
   loginForm: FormGroup;
   message=true
-   msg:any;
-    
+  msg:any;
+  responcedata:any;
 
   constructor(private routerref:Router, public formbuilder:FormBuilder, public auth: AuthService) {
 
@@ -35,16 +35,27 @@ export class AuthComponent implements OnInit {
       this.message=this.loginForm.valid;
     })
   }  
-    login(data: any){
-      
-      this.auth.login(data).subscribe(res =>{
-        console.log(res);
-       // this.routerref.navigate(["dashbord"])
+    login(){
+      if(this.loginForm.valid){
+        localStorage.setItem('token','username');
+        this.routerref.navigate(['dashboard'])
         
-      }, err =>{
-          this.msg='user not found';
-      })
+        this.auth.login(this.loginForm.value).subscribe(res =>{
+          if(res != null){
+            this.responcedata = res;
+            
+          }
+        })
       }
+    } 
+      // this.auth.login(data:any).subscribe(res =>{
+      //   console.log(res);
+      //  this.routerref.navigate(["dashbord"])
+        
+      // }, err =>{
+      //     this.msg='user not found';
+      // })
+    
       
       tagglePassword():void{
         this.showPassword= !this.showPassword;
