@@ -1,38 +1,22 @@
-<ng-template #content let-modal>
+<div class="container">
   <div class="header">
-    <button
-      type="button"
-      class="btn-close"
-      aria-label="Close"
-      
-    ></button>
+    <button type="button" class="btn-close" aria-label="Close" (click)="ngbModal.dismiss('Cross click')"></button>
   </div>
   <div class="dialogImg">
     <img src="assets\images\dialog.svg" />
   </div>
   <div class="body">
-    <h2>Delete personas?</h2>
+    <h3>Delete</h3>
+    <h3>{{names + " "}}</h3>
     <p>
       Are you sure you want to delete the personas? All the selected persona
       data will be permanently removed
     </p>
   </div>
   <div class="footer">
-    <button
-      type="button"
-      class="bi bi-trash btn btn-danger"
-      
-    >
-      Delete
-    </button>
+    <button type="button" class="bi bi-trash btn btn-danger"  (click)="ngbModal.close({success:true})">Delete</button>
   </div>
   <div class="cancel">
-    <button
-      type="button"
-      class="btn btn-cancel"
-      
-    >
-      Cancel
-    </button>
+    <button type="button" class="btn-deafult" (click)="ngbModal.close({success:false})">Cancel</button>
   </div>
-</ng-template>
+</div>

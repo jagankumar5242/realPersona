@@ -1,4 +1,4 @@
-<div onload="getUsers()">
+<div onload="getUsers()" class="body">
   <div class="row">
     <div class="col-12">
       <label class="lab1">Persona Management</label>
@@ -17,8 +17,8 @@
         </div>
       </div>
       <div class="col-sm-12 col-md-4 d-flex justify-content-end align-items-center " >
-        <a class="del" *ngIf="showDelete"  (click)="open()"><img src="assets\images\Trash.svg" />Delete</a>
-        <button class="rp-btn" routerLink="/dashboard/add-person"  onclick="reRoute()">+ New Persona</button>
+        <a class="del" *ngIf="showDelete"  (click)="openDialog()" ><img src="assets\images\Trash.svg" />Delete</a>
+        <button class="rp-btn" routerLink="/dashboard/add-person" onclick="reRoute()">+ New Persona</button>
       </div>
     </div>
   </div>
@@ -28,7 +28,7 @@
         <tr class="tableHead">
           <th>
             <span class="custom-checkbox">
-              <input type="checkbox" class="custom-control-input" id="checkbox-2" (click)="CheckAllOptions()" />
+              <input type="checkbox" class="form-check-input" [(ngModel)]="isCheckAll" (click)="CheckAllOptions()" />
               <!-- <p-checkbox (click)="CheckAllOptions()"  [binary]="true"></p-checkbox> -->
               <img src="assets\images\empty-image.svg">
             </span>
@@ -54,7 +54,7 @@
               <input
                 type="checkbox"
                 id="checkbox"
-                class="custom-control-input"
+                class="form-check-input"
                 [(ngModel)]="item.isSelected" [value]="item.value"
                  (click)=" taggleDelete(item, $event)"/>
               <img src="assets\images\tukaram.svg" class="profile">
@@ -84,7 +84,7 @@
       <tfoot>
         <tr>
           <td colspan="11">
-            <!-- <p-paginator class="page" [rows]="3" [totalRecords]="50" ></p-paginator> -->
+            <!-- <p-paginator class="page"   [rows]="3" [totalRecords]="50" ></p-paginator> -->
             <div class="clearfix">
               <pagination-controls (pageChange)="p= $event"></pagination-controls>
             </div>
@@ -94,4 +94,3 @@
     </table>    
   </div>
 </div>
-<!-- <app-dialogbox></app-dialogbox> -->
