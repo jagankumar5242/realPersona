@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddPersonComponent } from './add-person/add-person.component';
 import { DashboardComponent } from './admin-dashboard/dashboard/dashboard.component';
+import { AuthGuard } from './auth/auth.guard';
 import { AuthComponent } from './auth/auth/auth.component';
 import { LayoutComponent } from './header/layout/layout.component';
 import { UserListComponent } from './user-list/user-list.component';

@@ -55,8 +55,6 @@ export class AddPersonComponent implements OnInit {
     this.fileDetails = undefined;
   }
   
-
-
   addData(data: any){ 
     this.addperson.addData(data).subscribe(res=>{
        //console.log(res)
@@ -104,8 +102,7 @@ export class AddPersonComponent implements OnInit {
       this.fileDetails = undefined;
       this.imageURL = ''; 
        this.showmodel=false;
-
-      //this.routerref.navigate(['/dashbord']);
+       this.routerref.navigate(['/dashbord']);
       //  this.publishForm .reset(); 
       //  const data = {};
       //  this.addperson.deletePerson(data).subscribe(res=>{
