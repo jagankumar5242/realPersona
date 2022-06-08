@@ -33,13 +33,14 @@
                     
                      <div class="form-group gender col-10 mb-3 ">
                         <label for="gender" id="gender" >Gender</label><br>
-                            <input type="radio" value="male" name="gender" formControlName="gender" > male  
-                            <input type="radio" value="female" name="gender" formControlName="gender" > female 
+                            <input type="radio" value="male" name="gender" formControlName="gender" > Male  
+                            <input type="radio" value="female" name="gender" formControlName="gender" > Female 
                             <small class="text-danger" *ngIf="publishForm['controls']['gender'].touched && publishForm['controls']['gender']['errors']">gender is required</small>      
                      </div>
-                        <div class="form-floating col-3 mb-3">
+                        <div class="form-floating col-3 mb-3 ">
                             <input type="number" placeholder="Age"class="form-control input-radius" formControlName="age" maxlength="2"> 
-                            <label for="age" >Age</label> 
+                            <label for="age">Age </label> 
+                            <!-- <label for="years" class="form-group years">years</label> -->
                             <small class="text-danger" *ngIf="publishForm['controls']['age'].touched && publishForm['controls']['age']['errors']">gender is required</small> 
                         </div>
                         <div class=" form-floating col-10 mb-3"> 
@@ -105,10 +106,11 @@
        </div> 
     </div>
 </div>
-   
-
  
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" [ngClass]="{'show':showmodel}">
+
+<!-- popup model -->
+ 
+<div class="modal fade col-md-10 col-sm-12 col-lg-8" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" [ngClass]="{'show':showmodel}">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="header">

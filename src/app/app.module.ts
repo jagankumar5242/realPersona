@@ -15,6 +15,7 @@ import { AddPersonService } from './add-person/add-person.service';
 import { InputTextModule } from "primeng/inputtext";
 import { UserListComponent } from './user-list/user-list.component';
 import { PopupDailogComponent } from './popup-dailog/popup-dailog.component';
+import { AuthGuard } from './auth/auth.guard';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +41,7 @@ import { PopupDailogComponent } from './popup-dailog/popup-dailog.component';
     AddPersonService,
     UsersService,
     AuthService,
+    AuthGuard,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: backendInterceptor,
