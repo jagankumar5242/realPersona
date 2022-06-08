@@ -3,7 +3,7 @@
         {
             "create_time": "2022-02-27 04:48:29",
             "firstname": "Satya",
-            "id": "20",
+            "id": 20,
             "lastname": "Murthy",
             "update_time": "2022-02-27 04:48:29",
             "username": "satyagvns",
@@ -17,7 +17,7 @@
         {
             "create_time": "2022-02-27 04:48:38",
             "firstname": "Satya",
-            "id": "22",
+            "id": 22,
             "lastname": "U",
             "update_time": "2022-02-27 04:48:38",
             "username": "admin",
@@ -31,7 +31,7 @@
         {
             "create_time": "2022-02-27 04:55:18",
             "firstname": "Anil Reddy",
-            "id": "24",
+            "id": 24,
             "lastname": "LLP",
             "update_time": "2022-02-27 04:55:18",
             "username": "anilreddy",
@@ -45,7 +45,7 @@
         {
             "create_time": "2022-02-27 04:55:52",
             "firstname": "Kriti",
-            "id": "25",
+            "id": 25,
             "lastname": "T",
             "update_time": "2022-02-27 04:55:52",
             "username": "kriti",
@@ -59,7 +59,7 @@
         {
             "create_time": "2022-03-04 06:05:43",
             "firstname": "John",
-            "id": "26",
+            "id": 26,
             "lastname": "Deo",
             "update_time": "2022-03-04 06:05:43",
             "username": "john",
