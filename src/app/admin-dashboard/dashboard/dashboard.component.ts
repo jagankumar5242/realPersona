@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { UsersService } from './users.service';
 import { PrimeNGConfig } from 'primeng/api';
 import { Router } from '@angular/router';
@@ -12,7 +12,7 @@ import { DialogboxComponent } from '../dialogbox/dialogbox.component';
 })
 export class DashboardComponent implements OnInit {
   p: any;
-  public users: any = [];
+  public users: any = []; 
   showDelete = false;
   modalReference: any = NgbModal;
   isCheckAll = false;
@@ -33,14 +33,13 @@ export class DashboardComponent implements OnInit {
     });
     // this.primengConfig.ripple = true;
   }
-  reRoute(){
-    this.router.navigate(['/dashboard/add-person'])
+  reRoute() {
+    this.router.navigate(['/dashboard/add-person']);
   }
-  editPerson(){
-    this.router.navigate(
-      ['/dashboard/add-person'],
-      { queryParams: {isEdit:'true' } }
-    );
+  editPerson() {
+    this.router.navigate(['/dashboard/add-person'], {
+      queryParams: { isEdit: 'true' },
+    });
   }
   taggleDelete(item: any, event: any) {
     setTimeout(() => {
@@ -61,24 +60,25 @@ export class DashboardComponent implements OnInit {
   // }
 
   deletePerson(item: any) {
-    this.openDialog();
-    this.usersService.deletePerson(item).subscribe(
-      () => console.log(`user is deleted`),
-      (err) => console.log(`user not deleted`)
-    );
+    item.forEach((ele: any) => {
+      const userIndex = this.users.findIndex((userEle : any) => userEle.id === ele.id );
+      this.users.splice(userIndex, 1);
+    })
+    // this.usersService.deletePerson(item).subscribe(
+    //   () => console.log(`user is deleted`),
+    //   (err) => console.log(`user not deleted`)
+    // );
   }
-
-  // editPerson(item: any) {
-  //   this.router.navigate(['/Add-person']);
-  // }
-
+  delete( item:any){
+    this.openDialog( )
+  }
   CheckAllOptions() {
     setTimeout(() => {
       this.users.map((ele: any) => (ele.isSelected = this.isCheckAll));
       this.taggleDelete('i', 'u');
     }, 100);
   }
-  
+
   openDialog() {
     const ngMdelRef = this.modalService.open(DialogboxComponent, {
       ariaLabelledBy: 'modal-basic-title',
@@ -91,8 +91,14 @@ export class DashboardComponent implements OnInit {
     );
     ngMdelRef.result.then((res) => {
       console.log(res);
-      
-      // / this.users.forEach((element : any) => {
+      if (res.success == true) {
+        // console.log('hi');
+        const getSelected = this.users.filter((ele: any) => ele.isSelected);
+        this.deletePerson(getSelected);
+        console.log(getSelected);
+      }
+
+      //  this.users.forEach((element : any) => {
       //   if(element.isSelected == true){
       //     this.showDelete = true;
       // }

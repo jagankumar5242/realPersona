@@ -29,7 +29,6 @@
           <th>
             <span class="custom-checkbox">
               <input type="checkbox" class="form-check-input" [(ngModel)]="isCheckAll" (click)="CheckAllOptions()" />
-              <!-- <p-checkbox (click)="CheckAllOptions()"  [binary]="true"></p-checkbox> -->
               <img src="assets\images\empty-image.svg">
             </span>
           </th>
@@ -46,11 +45,9 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of users | paginate: { itemsPerPage:3,currentPage:p}"  class="tablerow">
+        <tr *ngFor="let item of users| paginate: { itemsPerPage:3,currentPage:p}"  class="tablerow">
           <td>
             <span>
-              <!-- <p-checkbox [(ngModel)]="item.isSelected" [value]="item.value"
-              (click)=" taggleDelete(item, $event)"  [binary]="true"></p-checkbox> -->
               <input
                 type="checkbox"
                 id="checkbox"
@@ -70,21 +67,14 @@
           <td>{{ item.create_time | date:'d/M/yyyy, h:m:a ' }}(IST)</td>
           <td>{{ item.no_of_downloads }}</td>
           <td>
-            <!-- <a  (click)="deletePerson(item)" class="delete" data-toggle="modal"> 
-            <img src="assets\images\Trash.svg" alt="" />
-            </a> -->
-            <button class="btn btn-deafult" (click)="deletePerson(item)"><img src="assets\images\Trash.svg" alt="" /></button>
+            <button class="btn btn-deafult" (click)="delete(item)"><img src="assets\images\Trash.svg" alt="" /></button>
             <button class="btn btn-deafult" (click)="editPerson()" routerLink="/Add-person"><img src="assets\images\edit.svg" alt="" /></button>
-            <!-- <a href="#editEmployeeModal" class="edit" data-toggle="modal">
-              <img src="assets\images\edit.svg" alt="" /> -->
-            <!-- </a> -->
           </td>
         </tr> 
       </tbody>
       <tfoot>
         <tr>
           <td colspan="11">
-            <!-- <p-paginator class="page"   [rows]="3" [totalRecords]="50" ></p-paginator> -->
             <div class="clearfix">
               <pagination-controls (pageChange)="p= $event"></pagination-controls>
             </div>

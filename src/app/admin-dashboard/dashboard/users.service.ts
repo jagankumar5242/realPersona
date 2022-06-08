@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpEvent, HttpHandler, HttpHeaders, HttpRequest } from '@angular/common/http'
-import { catchError, Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http'
+import { Observable } from 'rxjs';
 import { userDetails } from './user';
 
 @Injectable({
